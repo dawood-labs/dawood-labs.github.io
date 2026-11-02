@@ -443,6 +443,10 @@
         [
           "1.5M+",
           "features dissolved in one run"
+        ],
+        [
+          "566,090",
+          "acres reconciled with surveyed boundaries"
         ]
       ],
       "problem": "Crop maps are only useful to farms and mills when they follow real field boundaries.",
@@ -460,11 +464,17 @@
       "results": [
         "Pipeline used for sugarcane mapping in Thailand and South Africa",
         "422,763 fields delineated for the Myanmar rice project",
-        "IoU of 0.995 against reference boundaries"
+        "IoU of 0.995 against reference boundaries",
+        "Survey reconciliation: 566,090 acres and 123,357 polygons delivered for two sugarcane areas; 105k model polygons in ~15 min on 8 cores, resumable on spot machines"
       ],
       "lesson": "Geometry quality is a deliverable, not an afterthought.",
       "repo": "https://github.com/dawood-labs/geospatial-field-delineation",
-      "images": []
+      "images": [
+        "assets/img/field-boundaries-at-scale/reconcile_hero.jpg",
+        "assets/img/field-boundaries-at-scale/reconcile_cut.jpg",
+        "assets/img/field-boundaries-at-scale/reconcile_area.jpg",
+        "assets/img/field-boundaries-at-scale/reconcile_numbers.jpg"
+      ]
     },
     {
       "slug": "realtime-webgis-dashboard",
@@ -863,6 +873,10 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-10",
+      "text": "Reconciled model sugarcane polygons with surveyed boundaries for two areas: 566,090 acres, 123,357 polygons, every field classed and measured in acres."
+    },
     {
       "date": "2026-11",
       "text": "Standing sugarcane mapped over 5 Thai provinces (about 776,000 acres, 10 m) with field-level output."
