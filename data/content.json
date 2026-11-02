@@ -916,10 +916,20 @@
       },
       {
         "t": "Analysis of the Effects of Climatic Variables on Snow Cover Variability in Northern Pakistan",
-        "o": "National Conference on Climate Change and Water Resources, BZU Multan",
+        "o": "Poster with Shahid Parvez. National Conference on Climate Change and Water Resources, BZU Multan. MODIS and GLDAS, 2003-2023: snow cover vs air temperature r = -0.62",
         "d": "Feb 2024",
         "u": "https://bzu.edu.pk/events.php?eventID=194",
-        "l": "Event"
+        "l": "Event",
+        "x": [
+          [
+            "Poster",
+            "assets/conf/snow_cover_poster_bzu2024.jpg"
+          ],
+          [
+            "PDF",
+            "assets/conf/snow_cover_poster_bzu2024.pdf"
+          ]
+        ]
       },
       {
         "t": "Spatiotemporal Dynamics of Land Use and Land Cover over Multan District (co-author)",
@@ -929,11 +939,21 @@
         "l": "Event"
       },
       {
-        "t": "Drought Monitoring and Assessment: A Comparative Study of Different Indices and Approaches (poster)",
-        "o": "International Conference on Remote Sensing, GIS and Climate Change (RSGCC-2023), Lahore",
+        "t": "Drought Monitoring and Assessment: A Comparative Study of Different Indices and Approaches (poster, presented)",
+        "o": "International Conference on Remote Sensing, GIS and Climate Change (RSGCC-2023), Lahore. Landsat-8 NDVI and LST plus CHIRPS SPI over Bahawalpur, in Google Earth Engine",
         "d": "Mar 2023",
         "u": "http://rsgcc-2023.pu.edu.pk/",
-        "l": "Event"
+        "l": "Event",
+        "x": [
+          [
+            "Poster",
+            "assets/conf/drought_poster_rsgcc2023.jpg"
+          ],
+          [
+            "Certificate",
+            "assets/conf/drought_certificate_rsgcc2023.jpg"
+          ]
+        ]
       }
     ],
     "Seminars and technical training": [

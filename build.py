@@ -214,7 +214,7 @@ def index():
     s.append("</div></div></section>")
     s.append('<section id="learning"><div class="wrap"><div class="kicker">Learning and teaching</div><h2>Teaching, courses and training</h2><p class="sub">Sharing what I know, and keeping my skills current.</p><div class="learn">')
     for k, items in C.get("learning", {}).items():
-        s.append(f'<div class="card rv{" wide" if k in ("Teaching", "Digital courses") else ""}"><h3>{e(k)}</h3><ul>' + "".join(f'<li><b>{e(i["t"])}</b><span>{e(i["o"])}{" · " + e(i["d"]) if i["d"] else ""}</span>{f'<a href="{e(i["u"])}" target="_blank" rel="noopener">{e(i.get("l","Verify"))} ↗</a>' if i.get("u") else ""}</li>' for i in items) + "</ul></div>")
+        s.append(f'<div class="card rv{" wide" if k in ("Teaching", "Digital courses") else ""}"><h3>{e(k)}</h3><ul>' + "".join(f'<li><b>{e(i["t"])}</b><span>{e(i["o"])}{" · " + e(i["d"]) if i["d"] else ""}</span>{f'<a href="{e(i["u"])}" target="_blank" rel="noopener">{e(i.get("l","Verify"))} ↗</a>' if i.get("u") else ""}{"".join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(l)} ↗</a>' for l, u in i.get("x", []))}</li>' for i in items) + "</ul></div>")
     s.append("</div></div></section>")
     s.append('<section id="updates"><div class="wrap"><div class="kicker">Log</div><h2>Achievements and updates</h2><p class="sub">A running record of milestones.</p><div class="updates">')
     s += [f'<div class="up rv"><div class="d">{e(u["date"])}</div><div>{e(u["text"])}</div></div>' for u in C["updates"]]
