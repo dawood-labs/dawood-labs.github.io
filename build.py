@@ -107,6 +107,7 @@ h2{font-size:clamp(30px,3.6vw,44px);margin:10px 0 12px;letter-spacing:-.02em;lin
 .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .sk h3{margin:0 0 12px;font-size:16px;color:var(--acc)}
 .sk .tags span{font-size:13px;border:1px solid var(--line);background:var(--bg2);padding:5px 12px;border-radius:8px}
+.learn{display:grid;grid-template-columns:1fr 1fr;gap:20px}.learn .wide{grid-column:1/-1}.learn .wide ul{display:grid;grid-template-columns:1fr 1fr;column-gap:40px}.learn .wide li:nth-child(2){border-top:0;padding-top:0}.learn li a{color:var(--acc);font-size:12.5px;font-weight:600;margin-left:6px}.learn ul{list-style:none;padding:0;margin:14px 0 0}.learn li{padding:11px 0;border-top:1px solid var(--line)}.learn li:first-child{border-top:0;padding-top:0}.learn li b{display:block;font-size:14.5px;font-weight:600;color:var(--text)}.learn li span{font-size:13px;color:var(--muted)}
 .edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .updates{border-left:2px solid var(--line);margin-left:6px}
 .up{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:12px 0 12px 22px;position:relative}
@@ -140,7 +141,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .nextp{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding:30px 0}
 .lb{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;place-items:center;z-index:99;cursor:zoom-out}.lb img{max-width:94vw;max-height:92vh;background:#fff;border-radius:8px}.lb.on{display:grid}
 @media(max-width:980px){.hero .wrap,.cbody{grid-template-columns:1fr}.portrait{order:-1}.portrait img{width:220px;height:220px}.chip{display:none}.impact{grid-template-columns:repeat(3,1fr)}.cards,.repos{grid-template-columns:1fr 1fr}.navlinks a:not(.navcv){display:none}.side{position:static}}
-@media(max-width:640px){.impact,.cards,.repos,.proj,.skills,.edu,.gal{grid-template-columns:1fr}.impact{grid-template-columns:1fr 1fr}.pub{grid-template-columns:1fr;gap:4px}.up{grid-template-columns:1fr;gap:2px}section{padding:70px 0}.job{padding:20px}}
+@media(max-width:640px){.impact,.cards,.repos,.proj,.skills,.edu,.gal,.learn,.learn .wide ul{grid-template-columns:1fr}.impact{grid-template-columns:1fr 1fr}.pub{grid-template-columns:1fr;gap:4px}.up{grid-template-columns:1fr;gap:2px}section{padding:70px 0}.job{padding:20px}}
 """
 
 JS = """
@@ -210,6 +211,10 @@ def index():
     s += [f'<div class="card sk rv"><h3>{e(k)}</h3><div class="tags">' + "".join(f"<span>{e(x)}</span>" for x in v) + "</div></div>" for k, v in C["skills"].items()]
     s.append('</div><div class="edu" style="margin-top:20px">')
     s += [f'<div class="card rv"><div class="kicker" style="font-size:12px">{e(d["when"])}</div><h3 style="margin-top:6px">{e(d["degree"])}</h3><p>{e(d["place"])}</p><p style="margin-top:8px;color:var(--text)">{e(d["note"])}</p></div>' for d in C["education"]]
+    s.append("</div></div></section>")
+    s.append('<section id="learning"><div class="wrap"><div class="kicker">Learning and teaching</div><h2>Teaching, courses and training</h2><p class="sub">Sharing what I know, and keeping my skills current.</p><div class="learn">')
+    for k, items in C.get("learning", {}).items():
+        s.append(f'<div class="card rv{" wide" if k in ("Teaching", "Digital courses") else ""}"><h3>{e(k)}</h3><ul>' + "".join(f'<li><b>{e(i["t"])}</b><span>{e(i["o"])}{" · " + e(i["d"]) if i["d"] else ""}</span>{f'<a href="{e(i["u"])}" target="_blank" rel="noopener">{e(i.get("l","Verify"))} ↗</a>' if i.get("u") else ""}</li>' for i in items) + "</ul></div>")
     s.append("</div></div></section>")
     s.append('<section id="updates"><div class="wrap"><div class="kicker">Log</div><h2>Achievements and updates</h2><p class="sub">A running record of milestones.</p><div class="updates">')
     s += [f'<div class="up rv"><div class="d">{e(u["date"])}</div><div>{e(u["text"])}</div></div>' for u in C["updates"]]
