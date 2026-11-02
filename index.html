@@ -58,8 +58,8 @@ h2{font-size:clamp(30px,3.6vw,44px);margin:10px 0 12px;letter-spacing:-.02em;lin
 .proj{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .pc{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.25s;color:var(--text)}
 .pc:hover{transform:translateY(-5px);border-color:rgba(52,211,153,.5);box-shadow:0 20px 50px rgba(0,0,0,.35);color:var(--text)}
-.pc .top{height:150px;position:relative;background:linear-gradient(135deg,#0d3b3a,#0b2440 60%,#13294a);overflow:hidden}
-.pc .top img{width:100%;height:100%;object-fit:cover;opacity:.9}
+.pc .top{height:220px;position:relative;background:linear-gradient(135deg,#0d3b3a,#0b2440 60%,#13294a);overflow:hidden}
+.pc .top img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.pc:hover .top img{transform:scale(1.04)}.pc .top:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,17,28,0) 45%,rgba(7,17,28,.85))}.pc .top .big,.pc .place{z-index:1}
 .pc .top .no{position:absolute;inset:0;background-image:linear-gradient(rgba(56,189,248,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.09) 1px,transparent 1px);background-size:22px 22px}
 .pc .top .big{position:absolute;left:22px;bottom:16px;font-size:34px;font-weight:800;color:#fff;letter-spacing:-.02em;text-shadow:0 2px 12px rgba(0,0,0,.5)}
 .pc .top .big small{display:block;font-size:12px;font-weight:500;color:#cfe;letter-spacing:0}
@@ -181,8 +181,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <div class="pub rv"><div><div class="yr">2026</div><div class="st">Published</div></div><div><div class="t">Machine Learning and Deep Learning for Snowmelt Prediction: Long-Term Trends and Implications for Water Resource Management</div><div class="a"><b>Ahmad, D.</b>, & Haseeb, M. · <i>Water Resources Management, 40(9), 407</i> · <a href="https://doi.org/10.1007/s11269-026-04775-0" target="_blank" rel="noopener">DOI ↗</a></div></div></div>
 <div class="pub rv"><div><div class="yr">2025</div><div class="st">Published</div></div><div><div class="t">Multi-Sensor Fusion and Deep Learning Approaches for Semantic Segmentation of Glacial Lakes</div><div class="a">Xue, L., Khan, A., Haseeb, M., Aqnouy, M., <b>Ahmad, D.</b>, et al. · <i>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</i> · <a href="https://doi.org/10.1109/JSTARS.2025.3576187" target="_blank" rel="noopener">DOI ↗</a></div></div></div>
 <div class="pub rv"><div><div class="yr">—</div><div class="st">Under review</div></div><div><div class="t">GeoAI-based Spatio-Temporal Dynamics and Explainable AI Modelling of Carbon Monoxide over Pakistan using Sentinel-5P TROPOMI (2018 to 2026)</div><div class="a">Bano, S., Javed, A. M., Mahmood, K., <b>Ahmad, D.</b>, Tariq, S., & Parvez, S. · <i>Under review</i></div></div></div>
-<div class="pub rv"><div><div class="yr">—</div><div class="st">Under review</div></div><div><div class="t">Rice classification with Sentinel-1 and Sentinel-2</div><div class="a"><i>Under review</i></div></div></div>
-<div class="pub rv"><div><div class="yr">—</div><div class="st">Under review</div></div><div><div class="t">Operational maize mapping in Punjab, Pakistan</div><div class="a"><i>Under review</i></div></div></div>
+<div class="pub rv"><div><div class="yr">—</div><div class="st">Under review</div></div><div><div class="t">Optical Outperforms SAR for Basmati Rice Classification under Monsoon Constraints: A Sentinel-1/Sentinel-2 Accuracy, Spatial Integrity and Computational ROI Benchmark over the Punjab Rice Tract, Pakistan</div><div class="a"><b>Ahmad, D.</b>, Parvez, S., Haseeb, M., Raza, A., & Shees, S. M. · <i>Under review</i></div></div></div>
+<div class="pub rv"><div><div class="yr">—</div><div class="st">Under review</div></div><div><div class="t">An Operational, Scalable Framework for District-Level Spring Maize Cultivation Mapping Using Sentinel-2 and GPU-Accelerated XGBoost: Evidence from Punjab, Pakistan (2023-2025)</div><div class="a">Raza, A., <b>Ahmad, D.</b>, Parvez, S., Tahir, Z., & Haseeb, M. · <i>Under review</i></div></div></div>
 </div></section>
 <section id="code"><div class="wrap"><div class="kicker">Open source</div><h2>Code on GitHub</h2><p class="sub">Public repositories with full documentation, from radar preprocessing to geometry tools.</p><div class="repos">
 <a class="repo rv" href="https://github.com/dawood-labs/sar-rice-mapper" target="_blank" rel="noopener"><div class="g">Radar and rice</div><div class="n">sar-rice-mapper</div><p>Sentinel-1 preprocessing, label-free optical + radar rice rule, validation and audits for 132 AOIs.</p></a>
@@ -216,16 +216,16 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <section id="updates"><div class="wrap"><div class="kicker">Log</div><h2>Achievements and updates</h2><p class="sub">A running record of milestones.</p><div class="updates">
 <div class="up rv"><div class="d">2026-11</div><div>Field-level rice, sugarcane and cassava map of Phanom Dong Rak district (Thailand): 59,519 fields, 93% rice agreement with blind review.</div></div>
 <div class="up rv"><div class="d">2026-11</div><div>Maize mapped from radar alone in a cloudy province: F1 0.90 in spatial cross-validation, about 885,000 acres at 10 m.</div></div>
-<div class="up rv"><div class="d">2026-10</div><div>Reconciled model sugarcane polygons with surveyed boundaries for two areas: 566,090 acres, 123,357 polygons, every field classed and measured in acres.</div></div>
 <div class="up rv"><div class="d">2026-11</div><div>Standing sugarcane mapped over 5 Thai provinces (about 776,000 acres, 10 m) with field-level output.</div></div>
 <div class="up rv"><div class="d">2026-11</div><div>Launched this portfolio and started offering geospatial services online.</div></div>
+<div class="up rv"><div class="d">2026-10</div><div>Reconciled model sugarcane polygons with surveyed boundaries for two areas: 566,090 acres, 123,357 polygons, every field classed and measured in acres.</div></div>
 <div class="up rv"><div class="d">2026-10</div><div>Started national-scale sugarcane mapping of Thailand from Sentinel-1 radar.</div></div>
 <div class="up rv"><div class="d">2026-10</div><div>Punjab and Sindh crop maps for 2014 to 2025 accepted by the client.</div></div>
 <div class="up rv"><div class="d">2026-09</div><div>Myanmar rice map validated on 3,533 surveyed plots; radar-only model reaches 97.6% held-out recall.</div></div>
 <div class="up rv"><div class="d">2026</div><div>M.Phil. Space Science completed, Gold Medalist.</div></div>
 <div class="up rv"><div class="d">2026</div><div>First-author paper published in Water Resources Management.</div></div>
-<div class="up rv"><div class="d">2025</div><div>Co-authored paper published in IEEE JSTARS.</div></div>
 <div class="up rv"><div class="d">2025-03</div><div>Promoted to Machine Learning Engineer and Team Lead at Farmdar.</div></div>
+<div class="up rv"><div class="d">2025</div><div>Co-authored paper published in IEEE JSTARS.</div></div>
 </div></div></section>
 <section id="contact"><div class="wrap"><div class="cta rv"><div class="kicker">Contact</div><h2>Have satellite or GIS data that needs answers?</h2><p class="sub" style="margin:0 auto 10px">I am open to remote projects, collaborations and full-time roles.</p><div class="btns"><a class="btn p" href="mailto:dawoodahmad.spsc@gmail.com">dawoodahmad.spsc@gmail.com</a><a class="btn g" href="https://linkedin.com/in/dawood-ahmad-74b933386" target="_blank" rel="noopener">LinkedIn</a><a class="btn g" href="https://github.com/dawood-labs" target="_blank" rel="noopener">GitHub</a></div></div></div></section>
 <footer><div class="wrap"><span>© 2026 Dawood Ahmad · Lahore, Pakistan · open to remote work</span><span><a href="https://github.com/dawood-labs" target="_blank" rel="noopener">GitHub</a> · <a href="https://linkedin.com/in/dawood-ahmad-74b933386" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:dawoodahmad.spsc@gmail.com">Email</a></span></div></footer>

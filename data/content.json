@@ -759,16 +759,16 @@
       "link": ""
     },
     {
-      "title": "Rice classification with Sentinel-1 and Sentinel-2",
-      "authors": "",
+      "title": "Optical Outperforms SAR for Basmati Rice Classification under Monsoon Constraints: A Sentinel-1/Sentinel-2 Accuracy, Spatial Integrity and Computational ROI Benchmark over the Punjab Rice Tract, Pakistan",
+      "authors": "<b>Ahmad, D.</b>, Parvez, S., Haseeb, M., Raza, A., & Shees, S. M.",
       "venue": "Under review",
       "year": "",
       "status": "Under review",
       "link": ""
     },
     {
-      "title": "Operational maize mapping in Punjab, Pakistan",
-      "authors": "",
+      "title": "An Operational, Scalable Framework for District-Level Spring Maize Cultivation Mapping Using Sentinel-2 and GPU-Accelerated XGBoost: Evidence from Punjab, Pakistan (2023-2025)",
+      "authors": "Raza, A., <b>Ahmad, D.</b>, Parvez, S., Tahir, Z., & Haseeb, M.",
       "venue": "Under review",
       "year": "",
       "status": "Under review",
@@ -912,16 +912,16 @@
       "text": "Maize mapped from radar alone in a cloudy province: F1 0.90 in spatial cross-validation, about 885,000 acres at 10 m."
     },
     {
-      "date": "2026-10",
-      "text": "Reconciled model sugarcane polygons with surveyed boundaries for two areas: 566,090 acres, 123,357 polygons, every field classed and measured in acres."
-    },
-    {
       "date": "2026-11",
       "text": "Standing sugarcane mapped over 5 Thai provinces (about 776,000 acres, 10 m) with field-level output."
     },
     {
       "date": "2026-11",
       "text": "Launched this portfolio and started offering geospatial services online."
+    },
+    {
+      "date": "2026-10",
+      "text": "Reconciled model sugarcane polygons with surveyed boundaries for two areas: 566,090 acres, 123,357 polygons, every field classed and measured in acres."
     },
     {
       "date": "2026-10",
@@ -944,12 +944,12 @@
       "text": "First-author paper published in Water Resources Management."
     },
     {
-      "date": "2025",
-      "text": "Co-authored paper published in IEEE JSTARS."
-    },
-    {
       "date": "2025-03",
       "text": "Promoted to Machine Learning Engineer and Team Lead at Farmdar."
+    },
+    {
+      "date": "2025",
+      "text": "Co-authored paper published in IEEE JSTARS."
     }
   ],
   "learning": {
