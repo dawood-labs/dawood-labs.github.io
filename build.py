@@ -36,7 +36,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .navlinks a{color:var(--muted);margin-left:26px;font-size:14px;font-weight:500}.navlinks a:hover{color:var(--text)}
 .navcv{border:1px solid var(--line);padding:7px 14px;border-radius:8px;color:var(--text)!important}
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:110px 0 60px}
-.hero:before{content:"";position:absolute;inset:0;background:url(assets/img/ndvi_map.jpg) right center/contain no-repeat;opacity:.13;filter:saturate(1.4)}
+.hero:before{content:"";position:absolute;inset:-5%;background:url(assets/img/hero_contours.webp) center/cover no-repeat;opacity:.16;-webkit-mask-image:radial-gradient(ellipse at 70% 45%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse at 70% 45%,#000 30%,transparent 75%);animation:drift 40s ease-in-out infinite alternate}@keyframes drift{to{transform:translate(-2%,1.5%) scale(1.04)}}@media(prefers-reduced-motion:reduce){.hero:before{animation:none}}
 .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 75% 30%,rgba(52,211,153,.18),transparent 55%),radial-gradient(ellipse at 15% 85%,rgba(56,189,248,.14),transparent 55%);pointer-events:none}
 .gridbg{position:absolute;inset:0;background-image:linear-gradient(rgba(56,189,248,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.06) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.5fr 1fr;gap:60px;align-items:center}
