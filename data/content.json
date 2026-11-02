@@ -142,7 +142,12 @@
       ],
       "lesson": "Hard-coded thresholds do not survive real data. Shape, timing and rate of change of the crop curve matter more than any single value, and every number must say what it is compared against.",
       "repo": "https://github.com/dawood-labs/sar-rice-mapper",
-      "images": []
+      "images": [
+        "assets/img/label-free-rice-mapping/rice_fields_hero.jpg",
+        "assets/img/label-free-rice-mapping/radar_optical_curves.jpg",
+        "assets/img/label-free-rice-mapping/qc_agreement.jpg",
+        "assets/img/label-free-rice-mapping/rice_scale_map.jpg"
+      ]
     },
     {
       "slug": "rice-from-radar-alone",
