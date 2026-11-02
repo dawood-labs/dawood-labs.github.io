@@ -249,8 +249,8 @@
     {
       "slug": "field-level-crop-maps",
       "title": "Field-level rice, sugarcane and cassava maps",
-      "place": "Southeast Asia · 2026",
-      "summary": "One polygon per field with a crop class, built mainly from radar, checked and corrected with optical images and blind human review.",
+      "place": "Phanom Dong Rak, Surin, Thailand · 2026",
+      "summary": "One polygon per field with a crop class for a whole district (Phanom Dong Rak, Surin, Thailand), built mainly from radar, checked and corrected with optical images and blind human review.",
       "tags": [
         "Sentinel-1",
         "Sentinel-2",
@@ -260,16 +260,16 @@
       ],
       "metrics": [
         [
-          "~33,000 ha",
-          "per AOI run"
+          "59,519",
+          "fields, one polygon each"
         ],
         [
-          "3 crops",
-          "rice, sugarcane, cassava"
+          "82,843 ac",
+          "district mapped at 10 m"
         ],
         [
-          "Blind",
-          "review labels"
+          "93%",
+          "rice agreement with blind review"
         ]
       ],
       "problem": "A client needed field-level crop maps for a district-sized area where monsoon cloud hides most optical images.",
@@ -286,12 +286,20 @@
         "Final Sentinel-2 QC and cane/cassava split"
       ],
       "results": [
-        "Delivered shapefile and GeoParquet, one feature per field with class and acres",
-        "Every geometry passed automated QC before delivery"
+        "Phanom Dong Rak district, 2026 season: 59,519 field polygons delivered as shapefile and GeoParquet, each with its class and acres",
+        "26,035 acres rice, 10,965 acres sugarcane, 3,806 acres cassava",
+        "Rice vs non-rice agreement with 10 blind reviewers on 400 fields: 93% accuracy, precision 0.92, recall 0.90 (area-weighted)",
+        "Sugarcane and cassava vs the rest, 5 blind reviewers on 200 fields: precision 0.87, recall 0.72",
+        "Every geometry passed automated QC before delivery: no overlaps, no invalid shapes"
       ],
       "lesson": "If reviewers can see the model's answer, the review is not a test.",
       "repo": "https://github.com/dawood-labs/sar-crop-field-mapping",
-      "images": []
+      "images": [
+        "assets/img/field-level-crop-maps/hero_fields.jpg",
+        "assets/img/field-level-crop-maps/pixels_to_fields.jpg",
+        "assets/img/field-level-crop-maps/radar_curves.jpg",
+        "assets/img/field-level-crop-maps/accuracy.jpg"
+      ]
     },
     {
       "slug": "multi-year-crop-maps",
@@ -895,6 +903,10 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-11",
+      "text": "Field-level rice, sugarcane and cassava map of Phanom Dong Rak district (Thailand): 59,519 fields, 93% rice agreement with blind review."
+    },
     {
       "date": "2026-11",
       "text": "Maize mapped from radar alone in a cloudy province: F1 0.90 in spatial cross-validation, about 885,000 acres at 10 m."
