@@ -395,16 +395,25 @@
       "tags": [
         "Sentinel-1",
         "Terrain flattening",
-        "GEE"
+        "GEE",
+        "XGBoost"
       ],
       "metrics": [
         [
-          "6-12 days",
-          "radar revisit through cloud"
+          "0.90",
+          "maize F1, spatial CV"
         ],
         [
-          "VV + VH",
-          "analysis-ready stacks"
+          "885k acres",
+          "classified at 10 m"
+        ],
+        [
+          "87 / 88",
+          "provinces of radar exported"
+        ],
+        [
+          "6-12 days",
+          "radar revisit through cloud"
         ]
       ],
       "problem": "In persistently cloudy regions optical satellites miss the whole maize season.",
@@ -419,11 +428,19 @@
         "Pixel explorer to compare any pixel's time series with ground truth"
       ],
       "results": [
-        "Analysis-ready multi-date VV + VH stacks and a pixel index for model development"
+        "Analysis-ready multi-date VV + VH stacks and a pixel index for model development",
+        "Maize F1 0.90 (precision 0.89, recall 0.91) in 5-fold spatial cross-validation; rice, sugarcane and other classes 0.94-0.98",
+        "First province-scale map: about 885,000 acres classified at 10 m from Sentinel-1 alone",
+        "Wet-season radar exported for 87 of 88 provinces (~1.7 TB), ready for country-wide mapping"
       ],
       "lesson": "Audit tracks, dates and rain before modelling: radar has its own clouds.",
       "repo": "https://github.com/dawood-labs/sar-maize-mapper",
-      "images": []
+      "images": [
+        "assets/img/sar-maize-cloudy-tropics/maize_map_hero.jpg",
+        "assets/img/sar-maize-cloudy-tropics/radar_signatures.jpg",
+        "assets/img/sar-maize-cloudy-tropics/accuracy.jpg",
+        "assets/img/sar-maize-cloudy-tropics/country_coverage.jpg"
+      ]
     },
     {
       "slug": "field-boundaries-at-scale",
@@ -878,6 +895,10 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-11",
+      "text": "Maize mapped from radar alone in a cloudy province: F1 0.90 in spatial cross-validation, about 885,000 acres at 10 m."
+    },
     {
       "date": "2026-10",
       "text": "Reconciled model sugarcane polygons with surveyed boundaries for two areas: 566,090 acres, 123,357 polygons, every field classed and measured in acres."
