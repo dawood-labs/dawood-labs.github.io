@@ -227,11 +227,19 @@
       ],
       "results": [
         "Whole provinces mapped in one resumable run",
-        "National-scale sugarcane mapping of Thailand from Sentinel-1"
+        "National-scale sugarcane mapping of Thailand from Sentinel-1",
+        "October 2026: standing sugarcane mapped over 5 provinces in NE Thailand, about 776,000 acres at 10 m",
+        "Field-level output for one province: 124,000 delineated fields labelled and cleaned with size-aware rules",
+        "Blind test set (480 blocks, 3 reviewers): F1 0.91"
       ],
       "lesson": "At province scale, resumability and clean state matter as much as the model.",
       "repo": "https://github.com/dawood-labs/sar-crop-field-mapping",
-      "images": []
+      "images": [
+        "assets/img/province-scale-sugarcane/hero_five_provinces.jpg",
+        "assets/img/province-scale-sugarcane/image_to_sugarcane.jpg",
+        "assets/img/province-scale-sugarcane/field_cleanup.jpg",
+        "assets/img/province-scale-sugarcane/radar_season.jpg"
+      ]
     },
     {
       "slug": "field-level-crop-maps",
@@ -850,6 +858,10 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-11",
+      "text": "Standing sugarcane mapped over 5 Thai provinces (about 776,000 acres, 10 m) with field-level output."
+    },
     {
       "date": "2026-11",
       "text": "Launched this portfolio and started offering geospatial services online."
