@@ -337,7 +337,12 @@
       ],
       "lesson": "Make data sources swappable from day one: they change.",
       "repo": "https://github.com/dawood-labs/cropstack",
-      "images": []
+      "images": [
+        "assets/img/multi-year-crop-maps/crop_map_2025.jpg",
+        "assets/img/multi-year-crop-maps/acreage_trend.jpg",
+        "assets/img/multi-year-crop-maps/overlap_before_after.jpg",
+        "assets/img/multi-year-crop-maps/district_acreage.jpg"
+      ]
     },
     {
       "slug": "catching-hidden-failures",
