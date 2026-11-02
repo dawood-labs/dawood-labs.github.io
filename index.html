@@ -1,226 +1,226 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dawood Ahmad | Geospatial Machine Learning Engineer</title>
-<meta name="description" content="Dawood Ahmad: Machine Learning Engineer working with satellite imagery, remote sensing, GIS and deep learning. Portfolio of projects, publications and experience.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dawood Ahmad | Geospatial Machine Learning Engineer</title><meta name="description" content="Machine Learning Engineer and Team Lead building production satellite mapping systems, from single fields to whole countries, with radar and optical time series, machine learning and geospatial foundation models. My work runs for agribusinesses and development agencies across Asia, Africa and South America.">
+<meta property="og:title" content="Dawood Ahmad | Geospatial Machine Learning Engineer"><meta property="og:description" content="Machine Learning Engineer and Team Lead building production satellite mapping systems, from single fields to whole countries, with radar and optical time series, machine learning and geospatial foundation models. My work runs for agribusinesses and development agencies across Asia, Africa and South America."><meta property="og:image" content="https://dawood-labs.github.io/assets/img/ndvi_map.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2334d399'/><text x='16' y='22' font-size='16' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%2304131f'>DA</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b1622;--bg2:#0f1f2f;--card:#132739;--line:#1f3a52;--text:#e8eef4;--muted:#93a7ba;--acc:#2ecc71;--acc2:#5dade2}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;font-size:16px}
-a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-nav{position:sticky;top:0;z-index:10;background:rgba(11,22,34,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-nav .logo{font-weight:800;color:var(--text);letter-spacing:.5px}
-nav .links a{color:var(--muted);margin-left:22px;font-size:14px;font-weight:500}
-nav .links a:hover{color:var(--text);text-decoration:none}
-header{padding:90px 0 70px;background:radial-gradient(circle at 80% 20%,rgba(46,204,113,.12),transparent 50%),radial-gradient(circle at 10% 90%,rgba(93,173,226,.10),transparent 50%)}
-.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:50px;align-items:center}
-.eyebrow{color:var(--acc);font-weight:600;font-size:14px;letter-spacing:2px;text-transform:uppercase}
-h1{font-size:52px;line-height:1.1;margin:12px 0 18px;font-weight:800}
-.lead{font-size:19px;color:var(--muted);max-width:600px}
-.btns{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;font-size:15px}
-.btn.primary{background:var(--acc);color:#06210f}.btn.ghost{border:1px solid var(--line);color:var(--text)}
-.btn:hover{text-decoration:none;opacity:.9}
-.hero img{width:100%;border-radius:16px;border:1px solid var(--line);background:#fff}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:50px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
-.stat b{display:block;font-size:26px;color:var(--acc)}.stat span{color:var(--muted);font-size:14px}
-section{padding:70px 0;border-top:1px solid var(--line)}
-h2{font-size:32px;margin:0 0 8px}
-.sub{color:var(--muted);margin:0 0 34px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-.card h3{margin:0 0 8px;font-size:18px}
-.card p{margin:0;color:var(--muted);font-size:15px}
-.tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:12px;background:rgba(46,204,113,.12);color:var(--acc);padding:3px 9px;border-radius:20px}
-.job{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
-.job:last-child{border-bottom:0}
-.job .when{color:var(--muted);font-size:14px}
-.job h3{margin:0;font-size:19px}.job .org{color:var(--acc2);font-size:15px;margin-bottom:8px}
-.job ul{margin:6px 0 0;padding-left:18px;color:var(--muted)}.job li{margin:4px 0}
-.case{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin-bottom:40px}
-.case img{width:100%;border-radius:12px;border:1px solid var(--line);background:#fff}
-.case .txt h3{font-size:22px;margin:0 0 10px}.case .txt p{color:var(--muted)}
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.gallery figure{margin:0}.gallery img{width:100%;height:170px;object-fit:contain;background:#fff;border-radius:10px;border:1px solid var(--line)}
-.gallery figcaption{font-size:13px;color:var(--muted);margin-top:6px}
-.repo{display:flex;flex-direction:column}
-.repo .name{font-family:ui-monospace,Menlo,monospace;font-size:15px;color:var(--acc2);font-weight:600}
-.repo p{flex:1;margin-top:8px}
-.pub{padding:18px 0;border-bottom:1px solid var(--line)}.pub:last-child{border:0}
-.pub .t{font-weight:600}.pub .m{color:var(--muted);font-size:14px}
+:root{--bg:#07111c;--bg2:#0b1a29;--card:#0f2234;--card2:#132a40;--line:#1d3a55;--text:#e9f0f6;--muted:#8fa6bb;--acc:#34d399;--acc2:#38bdf8;--warm:#fbbf24}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--acc);text-decoration:none}a:hover{color:#6ee7b7}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s;border-bottom:1px solid transparent}
+nav.solid{background:rgba(7,17,28,.88);backdrop-filter:blur(12px);border-bottom-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-weight:800;color:var(--text);letter-spacing:.06em;font-size:15px;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;font-style:normal;color:#04131f;font-size:13px}
+.navlinks a{color:var(--muted);margin-left:26px;font-size:14px;font-weight:500}.navlinks a:hover{color:var(--text)}
+.navcv{border:1px solid var(--line);padding:7px 14px;border-radius:8px;color:var(--text)!important}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:110px 0 60px}
+.hero:before{content:"";position:absolute;inset:0;background:url(assets/img/ndvi_map.jpg) right center/contain no-repeat;opacity:.13;filter:saturate(1.4)}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 75% 30%,rgba(52,211,153,.18),transparent 55%),radial-gradient(ellipse at 15% 85%,rgba(56,189,248,.14),transparent 55%);pointer-events:none}
+.gridbg{position:absolute;inset:0;background-image:linear-gradient(rgba(56,189,248,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.06) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.5fr 1fr;gap:60px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(15,34,52,.7);padding:6px 14px;border-radius:30px;font-size:13px;color:var(--muted)}
+.badge b{width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px rgba(52,211,153,.2);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(52,211,153,0)}}
+h1{font-size:clamp(38px,5.6vw,68px);line-height:1.04;margin:20px 0;font-weight:800;letter-spacing:-.02em}
+.grad{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:19px;color:var(--muted);max-width:640px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:11px;font-weight:600;font-size:15px;transition:.2s}
+.btn.p{background:linear-gradient(135deg,var(--acc),#10b981);color:#04131f}.btn.p:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(52,211,153,.3);color:#04131f}
+.btn.g{border:1px solid var(--line);color:var(--text);background:rgba(15,34,52,.6)}.btn.g:hover{border-color:var(--acc);color:var(--text)}
+.portrait{position:relative;justify-self:center}
+.portrait img{width:330px;height:330px;border-radius:50%;object-fit:cover;border:4px solid var(--card2);position:relative;z-index:2}
+.portrait:before{content:"";position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(var(--acc),var(--acc2),transparent 60%,var(--acc));animation:spin 8s linear infinite;z-index:1}
+@keyframes spin{to{transform:rotate(360deg)}}
+.chip{position:absolute;z-index:3;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:12.5px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.chip b{color:var(--acc);display:block;font-size:16px}
+.c1{top:10px;left:-50px}.c2{bottom:30px;right:-40px}.c3{bottom:-10px;left:-20px}
+.impact{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:-20px;position:relative;z-index:3}
+.impact div{background:var(--bg2);padding:24px 18px}
+.impact b{font-size:30px;font-weight:800;display:block;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.02em}
+.impact span{font-size:13.5px;color:var(--text);display:block;font-weight:500}.impact small{color:var(--muted);font-size:12px}
+section{padding:100px 0}
+.kicker{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+h2{font-size:clamp(30px,3.6vw,44px);margin:10px 0 12px;letter-spacing:-.02em;line-height:1.15}
+.sub{color:var(--muted);max-width:720px;margin:0 0 46px;font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:18px;padding:26px;transition:.25s;position:relative}
+.card:hover{transform:translateY(-4px);border-color:rgba(52,211,153,.45)}
+.card .ic{width:46px;height:46px;border-radius:12px;background:rgba(52,211,153,.1);color:var(--acc);display:grid;place-items:center;margin-bottom:16px}
+.card .ic svg{width:24px;height:24px}
+.card h3{margin:0 0 8px;font-size:18.5px}.card p{margin:0;color:var(--muted);font-size:15px}
+.themes{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.themes span{border:1px solid var(--line);background:var(--card);padding:8px 16px;border-radius:30px;font-size:14px}
+.proj{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.pc{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.25s;color:var(--text)}
+.pc:hover{transform:translateY(-5px);border-color:rgba(52,211,153,.5);box-shadow:0 20px 50px rgba(0,0,0,.35);color:var(--text)}
+.pc .top{height:150px;position:relative;background:linear-gradient(135deg,#0d3b3a,#0b2440 60%,#13294a);overflow:hidden}
+.pc .top img{width:100%;height:100%;object-fit:cover;opacity:.9}
+.pc .top .no{position:absolute;inset:0;background-image:linear-gradient(rgba(56,189,248,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.09) 1px,transparent 1px);background-size:22px 22px}
+.pc .top .big{position:absolute;left:22px;bottom:16px;font-size:34px;font-weight:800;color:#fff;letter-spacing:-.02em;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.pc .top .big small{display:block;font-size:12px;font-weight:500;color:#cfe;letter-spacing:0}
+.pc .place{position:absolute;right:16px;top:14px;background:rgba(7,17,28,.75);border:1px solid var(--line);font-size:12px;padding:4px 10px;border-radius:20px;color:var(--muted)}
+.pc .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.pc h3{margin:0 0 8px;font-size:20px;line-height:1.3}.pc p{color:var(--muted);margin:0 0 14px;font-size:15px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;background:rgba(56,189,248,.1);color:var(--acc2);padding:3px 10px;border-radius:20px}
+.more{margin-top:16px;font-weight:600;color:var(--acc);font-size:14px}
+.tl{position:relative;padding-left:34px}
+.tl:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--acc),var(--acc2),transparent)}
+.job{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 28px;margin-bottom:22px}
+.job:before{content:"";position:absolute;left:-33px;top:30px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--acc)}
+.job .h{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.job h3{margin:0;font-size:20px}.job .org{color:var(--acc2);font-weight:600}.job .org small{color:var(--muted);font-weight:400}
+.job .when{color:var(--muted);font-size:14px;background:var(--bg2);border:1px solid var(--line);padding:3px 12px;border-radius:20px;height:fit-content}
+.job ul{margin:14px 0 0;padding-left:20px;color:#c4d3e0}.job li{margin:7px 0}
+.pub{display:grid;grid-template-columns:90px 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line)}
+.pub .yr{font-size:26px;font-weight:800;color:var(--acc)}.pub .st{font-size:12px;color:var(--muted)}
+.pub .t{font-weight:600;font-size:17px}.pub .a{color:var(--muted);font-size:14.5px;margin-top:4px}.pub .a b{color:var(--text)}
+.repos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.repo{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;color:var(--text);transition:.2s;display:block}
+.repo:hover{border-color:var(--acc2);color:var(--text);transform:translateY(-3px)}
+.repo .n{font-family:ui-monospace,Menlo,monospace;color:var(--acc2);font-weight:600;font-size:14.5px}
+.repo .g{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.repo p{margin:8px 0 0;color:var(--muted);font-size:14px}
 .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.contact{text-align:center}
-.contact .btns{justify-content:center}
-footer{padding:30px 0;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line)}
-@media(max-width:860px){
- .hero,.case,.grid2,.skills{grid-template-columns:1fr}.grid3,.gallery{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}
- h1{font-size:38px}.job{grid-template-columns:1fr;gap:4px}nav .links{display:none}
-}
-@media(max-width:520px){.grid3,.gallery{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-
-<nav><div class="wrap">
-  <a class="logo" href="#top">DAWOOD AHMAD</a>
-  <div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#code">Code</a><a href="#publications">Publications</a><a href="#contact">Contact</a></div>
-</div></nav>
-
-<header id="top"><div class="wrap">
-  <div class="hero">
-    <div>
-      <div class="eyebrow">Geospatial AI · Remote Sensing · Machine Learning</div>
-      <h1>I turn satellite data into maps, models and decisions.</h1>
-      <p class="lead">Machine Learning Engineer and Team Lead building production satellite mapping systems, from field level to national scale, for agribusinesses and development agencies across Asia, Africa and South America.</p>
-      <div class="btns">
-        <a class="btn primary" href="#work">See my work</a>
-        <a class="btn ghost" href="https://github.com/dawood-labs" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn ghost" href="https://linkedin.com/in/dawood-ahmad-74b933386" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
-    <img src="assets/ndvi_map.jpg" alt="NDVI map of a district in Punjab, Pakistan">
-  </div>
-  <div class="stats">
-    <div class="stat"><b>6</b><span>countries mapped: Pakistan, Thailand, Myanmar, Philippines, South Africa, Brazil</span></div>
-    <div class="stat"><b>12 yrs</b><span>of crop maps produced, 2014 to 2025</span></div>
-    <div class="stat"><b>2</b><span>peer-reviewed papers, more under review</span></div>
-    <div class="stat"><b>Gold Medal</b><span>M.Phil. Space Science, University of the Punjab</span></div>
-  </div>
+.sk h3{margin:0 0 12px;font-size:16px;color:var(--acc)}
+.sk .tags span{font-size:13px;border:1px solid var(--line);background:var(--bg2);padding:5px 12px;border-radius:8px}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.updates{border-left:2px solid var(--line);margin-left:6px}
+.up{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:12px 0 12px 22px;position:relative}
+.up:before{content:"";position:absolute;left:-7px;top:19px;width:12px;height:12px;border-radius:50%;background:var(--acc2)}
+.up .d{color:var(--acc2);font-weight:600;font-size:14px}
+.cta{text-align:center;background:radial-gradient(ellipse at center,rgba(52,211,153,.14),transparent 70%);border:1px solid var(--line);border-radius:26px;padding:70px 30px}
+.cta .btns{justify-content:center}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}
+/* case page */
+.ch{padding:130px 0 50px;position:relative;overflow:hidden}
+.ch:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(52,211,153,.14),transparent 55%);pointer-events:none}
+.back{color:var(--muted);font-size:14px}
+.mstrip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:34px}
+.mstrip div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.mstrip b{font-size:26px;display:block;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.mstrip span{color:var(--muted);font-size:13.5px}
+.cbody{display:grid;grid-template-columns:1fr 300px;gap:50px;padding-bottom:60px}
+.cbody h2{font-size:26px;margin:40px 0 12px}.cbody h2:first-child{margin-top:0}
+.cbody p,.cbody li{color:#c4d3e0}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;position:relative;padding:14px 18px 14px 62px;background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+.steps li:before{content:counter(s);position:absolute;left:16px;top:12px;width:32px;height:32px;border-radius:9px;background:rgba(52,211,153,.12);color:var(--acc);font-weight:800;display:grid;place-items:center}
+.res li{margin:8px 0}
+.lesson{border-left:4px solid var(--acc);background:var(--card);padding:18px 22px;border-radius:0 12px 12px 0;font-style:italic;color:var(--text)}
+.side{position:sticky;top:90px;height:fit-content;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.side h4{margin:0 0 10px;color:var(--muted);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:10px}
+.gal img{width:100%;border-radius:12px;background:#fff;border:1px solid var(--line);cursor:zoom-in}
+.nextp{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding:30px 0}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;place-items:center;z-index:99;cursor:zoom-out}.lb img{max-width:94vw;max-height:92vh;background:#fff;border-radius:8px}.lb.on{display:grid}
+@media(max-width:980px){.hero .wrap,.cbody{grid-template-columns:1fr}.portrait{order:-1}.portrait img{width:220px;height:220px}.chip{display:none}.impact{grid-template-columns:repeat(3,1fr)}.cards,.repos{grid-template-columns:1fr 1fr}.navlinks a:not(.navcv){display:none}.side{position:static}}
+@media(max-width:640px){.impact,.cards,.repos,.proj,.skills,.edu,.gal{grid-template-columns:1fr}.impact{grid-template-columns:1fr 1fr}.pub{grid-template-columns:1fr;gap:4px}.up{grid-template-columns:1fr;gap:2px}section{padding:70px 0}.job{padding:20px}}
+</style></head><body>
+<nav><div class="wrap"><a class="logo" href="index.html"><i>DA</i>DAWOOD AHMAD</a><div class="navlinks">
+<a href="index.html#work">Work</a><a href="index.html#experience">Experience</a><a href="index.html#research">Research</a><a href="index.html#code">Code</a><a href="index.html#updates">Updates</a><a href="index.html#contact">Contact</a>
+<a class="navcv" href="assets/docs/Dawood_Ahmad_CV.pdf" target="_blank">Download CV</a></div></div></nav>
+<header class="hero"><div class="gridbg"></div><div class="wrap"><div>
+<span class="badge"><b></b>Lahore, Pakistan · open to remote work</span>
+<h1>I turn <span class="grad">satellite data</span> into maps, models and decisions.</h1>
+<p class="lead">Machine Learning Engineer and Team Lead building production satellite mapping systems, from single fields to whole countries, with radar and optical time series, machine learning and geospatial foundation models. My work runs for agribusinesses and development agencies across Asia, Africa and South America.</p>
+<div class="btns"><a class="btn p" href="#work">Explore my work →</a><a class="btn g" href="assets/docs/Dawood_Ahmad_CV.pdf" target="_blank">Download CV</a><a class="btn g" href="https://github.com/dawood-labs" target="_blank" rel="noopener">GitHub</a><a class="btn g" href="https://linkedin.com/in/dawood-ahmad-74b933386" target="_blank" rel="noopener">LinkedIn</a></div></div>
+<div class="portrait"><img src="assets/img/dawood.jpg" alt="Dawood Ahmad"><div class="chip c1"><b>Team Lead</b>ML and remote sensing</div><div class="chip c2"><b>Gold Medal</b>M.Phil. Space Science</div><div class="chip c3"><b>6 countries</b>mapped from space</div></div>
 </div></header>
-
-<section id="about"><div class="wrap">
-  <h2>What I do</h2>
-  <p class="sub">End-to-end geospatial work: from raw imagery to validated, delivered products.</p>
-  <div class="grid3">
-    <div class="card"><h3>Land cover and crop mapping</h3><p>Crop type, forest, water and built-up mapping with area statistics, from a single field to a whole country.</p></div>
-    <div class="card"><h3>Radar (SAR) analysis</h3><p>Sentinel-1 time series for cloudy and monsoon regions where optical satellites miss the season.</p></div>
-    <div class="card"><h3>Machine and deep learning</h3><p>Random Forest, XGBoost, LightGBM, CNN and U-Net models, plus Segment Anything (SAMGeo) for field boundaries.</p></div>
-    <div class="card"><h3>Time-series and change analysis</h3><p>NDVI and other indices, gap-filled time series, sowing and harvest detection, change detection.</p></div>
-    <div class="card"><h3>Production pipelines</h3><p>Python, Google Earth Engine and STAC pipelines with data quality checks that catch errors before they reach the client.</p></div>
-    <div class="card"><h3>WebGIS and dashboards</h3><p>Django, GeoServer, PostGIS, Leaflet and OpenLayers, including live field-survey data through ODK Central.</p></div>
-  </div>
+<div class="wrap"><div class="impact rv"><div><b>6</b><span>countries mapped</span><small>Pakistan, Thailand, Myanmar, Philippines, South Africa, Brazil</small></div><div><b>132</b><span>areas of interest in one rice project</span><small>radar and optical, end to end</small></div><div><b>3,533</b><span>surveyed plots used for validation</span><small>rice, Myanmar 2026</small></div><div><b>422,763</b><span>field boundaries delineated</span><small>with a SAMGeo pipeline</small></div><div><b>12 yrs</b><span>of crop maps, 2014 to 2025</span><small>Punjab and Sindh, Pakistan</small></div><div><b>8,356</b><span>radar passes audited</span><small>artefact passes found and removed</small></div></div></div>
+<section id="expertise"><div class="wrap"><div class="kicker">What I do</div><h2>End-to-end geospatial AI</h2><p class="sub">From raw radar and optical imagery to validated maps, field polygons and dashboards that clients use to make decisions.</p><div class="cards">
+<div class="card rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12l7-7"/><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div><h3>Radar (SAR) remote sensing</h3><p>Sentinel-1 VV/VH time series, terrain flattening, flood and water detection, and crop mapping where clouds hide the season.</p></div>
+<div class="card rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c3 0 3-10 6-10s3 10 6 10 3-6 6-6"/></svg></div><h3>Optical time series</h3><p>Sentinel-2 and Landsat compositing, cloud masking, Whittaker smoothing, crop calendars, sowing and harvest detection.</p></div>
+<div class="card rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><path d="M8 7l3 3M16 7l-3 3M8 17l3-3M16 17l-3-3"/></svg></div><h3>Machine and deep learning</h3><p>Random Forest, XGBoost, LightGBM, CNN, U-Net and segmentation models, with validation that cannot flatter itself.</p></div>
+<div class="card rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 14h7v7H3z"/></svg></div><h3>Geospatial foundation models</h3><p>Segment Anything (SAMGeo) for field boundaries, open Fields of The World data, polygon cleaning and topology.</p></div>
+<div class="card rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="5" height="6" rx="1"/><rect x="10" y="9" width="5" height="6" rx="1"/><rect x="18" y="9" width="4" height="6" rx="1"/><path d="M7 12h3M15 12h3"/></svg></div><h3>Production pipelines</h3><p>Google Earth Engine, STAC, GCS and S3, Docker, resumable province-scale runs, guards and tests that stop silent errors.</p></div>
+<div class="card rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg></div><h3>WebGIS and dashboards</h3><p>Django, GeoServer, PostGIS, Leaflet, OpenLayers and ODK Central for real-time progress and field data.</p></div>
+</div><div class="themes rv"><span>Rice</span><span>Sugarcane</span><span>Maize</span><span>Cotton</span><span>Wheat</span><span>Cassava</span><span>Glacial lakes</span><span>Snowmelt</span><span>Air quality (CO)</span><span>Land cover</span><span>Floods and water</span><span>Field boundaries</span></div></div></section>
+<section id="work" style="background:var(--bg2)"><div class="wrap"><div class="kicker">Case studies</div><h2>Selected industry work</h2><p class="sub">Production projects in radar and optical crop mapping, validation and geospatial engineering. Each case study covers the problem, data, method and measured results.</p><div class="proj">
+<a class="pc rv" href="projects/label-free-rice-mapping.html"><div class="top"><div class="no"></div><span class="place">Myanmar · 2025-2026</span><div class="big">132<small>AOIs mapped</small></div></div>
+<div class="body"><h3>Label-free rice mapping under monsoon cloud</h3><p>A rice map for 132 areas with no training labels: the optical crop calendar finds rice, the radar flooding signal confirms it.</p><div class="tags"><span class="tag">Sentinel-1</span><span class="tag">Sentinel-2</span><span class="tag">Phenology</span><span class="tag">SAMGeo</span><span class="tag">Validation</span></div><span class="more">Read case study →</span></div></a>
+<a class="pc rv" href="projects/rice-from-radar-alone.html"><div class="top"><div class="no"></div><span class="place">Myanmar · 2026</span><div class="big">131<small>radar features per pixel</small></div></div>
+<div class="body"><h3>Rice from radar alone</h3><p>Where clouds block every optical image, a radar-only model reproduces the validated rice map on areas it never saw.</p><div class="tags"><span class="tag">Sentinel-1</span><span class="tag">XGBoost</span><span class="tag">Cross-validation</span></div><span class="more">Read case study →</span></div></a>
+<a class="pc rv" href="projects/province-scale-sugarcane.html"><div class="top"><div class="no"></div><span class="place">Thailand and Pakistan · 2025-2026</span><div class="big">10 m<small>resolution</small></div></div>
+<div class="body"><h3>Province and national-scale sugarcane mapping</h3><p>Standing sugarcane at 10 m for whole provinces from a season of radar and optical data, delivered as clean field polygons with acres.</p><div class="tags"><span class="tag">Sentinel-1</span><span class="tag">Sentinel-2</span><span class="tag">LightGBM</span><span class="tag">S3</span><span class="tag">Airflow-ready</span></div><span class="more">Read case study →</span></div></a>
+<a class="pc rv" href="projects/field-level-crop-maps.html"><div class="top"><div class="no"></div><span class="place">Southeast Asia · 2026</span><div class="big">~33,000 ha<small>per AOI run</small></div></div>
+<div class="body"><h3>Field-level rice, sugarcane and cassava maps</h3><p>One polygon per field with a crop class, built mainly from radar, checked and corrected with optical images and blind human review.</p><div class="tags"><span class="tag">Sentinel-1</span><span class="tag">Sentinel-2</span><span class="tag">XGBoost</span><span class="tag">Topology</span><span class="tag">QC</span></div><span class="more">Read case study →</span></div></a>
+<a class="pc rv" href="projects/multi-year-crop-maps.html"><div class="top"><div class="no"></div><span class="place">Punjab and Sindh, Pakistan</span><div class="big">12<small>years mapped</small></div></div>
+<div class="body"><h3>Twelve years of crop maps, 2014 to 2025</h3><p>District-level maps of sugarcane, wheat, maize and rice for every year since 2014, for an international development agency.</p><div class="tags"><span class="tag">Sentinel-2</span><span class="tag">Landsat 8</span><span class="tag">Random Forest</span><span class="tag">XGBoost</span><span class="tag">STAC</span></div><span class="more">Read case study →</span></div></a>
+<a class="pc rv" href="projects/catching-hidden-failures.html"><div class="top"><div class="no"></div><span class="place">Pakistan · 2026</span><div class="big">35.9%<small>true recall on a new date</small></div></div>
+<div class="body"><h3>Catching hidden model failures</h3><p>Two production bugs that looked like good results: a validation split that hid a model&#x27;s failure, and a date shift that inflated area by 63%.</p><div class="tags"><span class="tag">Data leakage</span><span class="tag">Domain shift</span><span class="tag">Testing</span></div><span class="more">Read case study →</span></div></a>
+<a class="pc rv" href="projects/sar-maize-cloudy-tropics.html"><div class="top"><div class="no"></div><span class="place">Philippines · 2025-2026</span><div class="big">6-12 days<small>radar revisit through cloud</small></div></div>
+<div class="body"><h3>SAR maize mapping in the cloudy tropics</h3><p>Leading radar research on maize detection in a persistently cloudy climate.</p><div class="tags"><span class="tag">Sentinel-1</span><span class="tag">Terrain flattening</span><span class="tag">GEE</span></div><span class="more">Read case study →</span></div></a>
+<a class="pc rv" href="projects/field-boundaries-at-scale.html"><div class="top"><div class="no"></div><span class="place">Thailand, South Africa, Myanmar</span><div class="big">422,763<small>fields in one project</small></div></div>
+<div class="body"><h3>Field boundaries at scale</h3><p>End-to-end field delineation built around Segment Anything (SAMGeo), plus tools for open boundaries and survey reconciliation.</p><div class="tags"><span class="tag">SAMGeo</span><span class="tag">Segment Anything</span><span class="tag">FTW</span><span class="tag">Topology</span></div><span class="more">Read case study →</span></div></a>
+<a class="pc rv" href="projects/realtime-webgis-dashboard.html"><div class="top"><div class="no"></div><span class="place">NESPAK · Lahore · 2024-2025</span><div class="big">Real time<small>progress tracking</small></div></div>
+<div class="body"><h3>Real-time WebGIS progress dashboard</h3><p>A live GIS dashboard for the WASA Lahore Development Project, with field-survey data flowing in through ODK Central.</p><div class="tags"><span class="tag">WebGIS</span><span class="tag">ODK Central</span><span class="tag">Dashboards</span><span class="tag">PostGIS</span></div><span class="more">Read case study →</span></div></a>
+</div></div></section>
+<section id="experience"><div class="wrap"><div class="kicker">Career</div><h2>Experience</h2><p class="sub">Industry roles in Earth observation, GIS and machine learning.</p><div class="tl">
+<div class="job rv"><div class="h"><div><h3>Machine Learning Engineer and Team Lead</h3><div class="org">Farmdar <small>· Agri-tech and Earth observation, Lahore</small></div></div><span class="when">Mar 2025 – Present</span></div><ul><li>Lead a team of machine-learning and remote-sensing engineers delivering satellite crop-monitoring products to agribusinesses and development agencies in Asia, Africa and South America.</li><li>Myanmar rice: designed a label-free method (optical crop calendar + radar flood confirmation) across 132 AOIs, validated on 3,533 surveyed plots with plot-interior recall up to 99.4%; built a radar-only XGBoost model with 97.6% held-out recall for cloud-blocked areas.</li><li>Thailand: national-scale sugarcane mapping from Sentinel-1 radar; field delineation for sugar mills.</li><li>Pakistan: training data, models and pipeline for district-level crop maps of Punjab and Sindh for every year 2014 to 2025 (sugarcane, wheat, maize, rice, cotton).</li><li>Built the end-to-end SAMGeo field-boundary pipeline used in Thailand, South Africa and Myanmar (422,763 fields in one project).</li><li>Philippines: lead Sentinel-1 research on maize detection in a persistently cloudy climate. Brazil and Pakistan: NDVI time-series models for sugarcane sowing and harvest windows.</li><li>Found and fixed hidden failures: a random pixel split that hid a 35.9% recall on new dates, and a date-window bug that inflated cotton area by 63%.</li></ul></div>
+<div class="job rv"><div class="h"><div><h3>GIS Developer</h3><div class="org">NESPAK <small>· Public-sector engineering consultancy</small></div></div><span class="when">Dec 2024 – Mar 2025</span></div><ul><li>Built a real-time GIS progress-monitoring dashboard for the WASA Lahore Development Project.</li><li>Set up field-survey data collection and live ingestion through ODK Central.</li></ul></div>
+<div class="job rv"><div class="h"><div><h3>Data Processing Analyst</h3><div class="org">Geospatial Planning and Engineering Associates <small>· Geospatial services</small></div></div><span class="when">Jul 2024 – Nov 2024</span></div><ul><li>Built high-resolution image classifiers and a deep-learning model for satellite image super-resolution.</li><li>Managed imagery quality assessment and ground-control planning.</li></ul></div>
+<div class="job rv"><div class="h"><div><h3>Geospatial Intern</h3><div class="org">Farmdar <small>· Agri-tech and Earth observation</small></div></div><span class="when">May 2024 – Jul 2024</span></div><ul><li>Wrote Sentinel-2 and Google Earth Engine crop-classification scripts and an initial maize-detection model, which led to a full-time role.</li></ul></div>
+</div></div></section>
+<section id="research" style="background:var(--bg2)"><div class="wrap"><div class="kicker">Research</div><h2>Research and publications</h2><p class="sub">Peer-reviewed work in machine learning for hydrology, glaciers, air quality and crop mapping.</p><div class="proj" style="margin-bottom:50px">
+<a class="pc rv" href="projects/snowmelt-prediction.html"><div class="top"><div class="no"></div><span class="place">Northern Pakistan · B.S. research, published 2026</span><div class="big">0.9697<small>LSTM R²</small></div></div>
+<div class="body"><h3>Snowmelt prediction with machine and deep learning</h3><p>67 years of snowmelt (1948-2014) modelled from 38 variables; an LSTM reached R² 0.97. First-author paper in Water Resources Management.</p><div class="tags"><span class="tag">LSTM</span><span class="tag">Random Forest</span><span class="tag">GLDAS</span><span class="tag">Feature selection</span><span class="tag">Hydrology</span></div><span class="more">Read case study →</span></div></a>
+<a class="pc rv" href="projects/glacial-lake-segmentation.html"><div class="top"><div class="no"></div><span class="place">High mountain Asia · published 2025</span><div class="big">IEEE JSTARS<small>journal</small></div></div>
+<div class="body"><h3>Glacial lake segmentation with deep learning</h3><p>Multi-sensor fusion and deep segmentation models for mapping glacial lakes, a key input for outburst-flood risk.</p><div class="tags"><span class="tag">Sentinel-2</span><span class="tag">U-Net</span><span class="tag">Semantic segmentation</span><span class="tag">Multi-sensor fusion</span></div><span class="more">Read case study →</span></div></a>
+<a class="pc rv" href="projects/optical-vs-radar-thesis.html"><div class="top"><img src="assets/img/crop_maps.jpg" alt="" loading="lazy"><span class="place">Punjab, Pakistan · 2024-2026</span><div class="big">94.5%<small>optical overall accuracy</small></div></div>
+<div class="body"><h3>Optical vs radar crop mapping (M.Phil. research)</h3><p>A district-wide comparison of Sentinel-2 and Sentinel-1 for crop classification, including accuracy and computational cost.</p><div class="tags"><span class="tag">Sentinel-1</span><span class="tag">Sentinel-2</span><span class="tag">Machine learning</span><span class="tag">Accuracy assessment</span></div><span class="more">Read case study →</span></div></a>
+</div>
+<div class="pub rv"><div><div class="yr">2026</div><div class="st">Published</div></div><div><div class="t">Machine Learning and Deep Learning for Snowmelt Prediction: Long-Term Trends and Implications for Water Resource Management</div><div class="a"><b>Ahmad, D.</b>, & Haseeb, M. · <i>Water Resources Management, 40(9), 407</i> · <a href="https://doi.org/10.1007/s11269-026-04775-0" target="_blank" rel="noopener">DOI ↗</a></div></div></div>
+<div class="pub rv"><div><div class="yr">2025</div><div class="st">Published</div></div><div><div class="t">Multi-Sensor Fusion and Deep Learning Approaches for Semantic Segmentation of Glacial Lakes</div><div class="a">Xue, L., Khan, A., Haseeb, M., Aqnouy, M., <b>Ahmad, D.</b>, et al. · <i>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</i> · <a href="https://doi.org/10.1109/JSTARS.2025.3576187" target="_blank" rel="noopener">DOI ↗</a></div></div></div>
+<div class="pub rv"><div><div class="yr">—</div><div class="st">Under review</div></div><div><div class="t">GeoAI-based Spatio-Temporal Dynamics and Explainable AI Modelling of Carbon Monoxide over Pakistan using Sentinel-5P TROPOMI (2018 to 2026)</div><div class="a">Bano, S., Javed, A. M., Mahmood, K., <b>Ahmad, D.</b>, Tariq, S., & Parvez, S. · <i>Under review</i></div></div></div>
+<div class="pub rv"><div><div class="yr">—</div><div class="st">Under review</div></div><div><div class="t">Rice classification with Sentinel-1 and Sentinel-2</div><div class="a"><i>Under review</i></div></div></div>
+<div class="pub rv"><div><div class="yr">—</div><div class="st">Under review</div></div><div><div class="t">Operational maize mapping in Punjab, Pakistan</div><div class="a"><i>Under review</i></div></div></div>
 </div></section>
-
-<section id="experience"><div class="wrap">
-  <h2>Experience</h2>
-  <p class="sub">Industry work in Earth observation, GIS and machine learning.</p>
-  <div class="job">
-    <div class="when">Mar 2025 – Present</div>
-    <div><h3>Machine Learning Engineer and Team Lead</h3><div class="org">Farmdar · Agri-tech and Earth observation, Lahore</div>
-    <ul>
-      <li>Lead a team of machine-learning and remote-sensing engineers delivering satellite crop-monitoring products to clients in several countries.</li>
-      <li>National-scale sugarcane mapping of Thailand from Sentinel-1 radar time series.</li>
-      <li>Built the end-to-end field-boundary pipeline around SAMGeo, used for sugarcane mapping in Thailand and South Africa.</li>
-      <li>Built training data, models and the production pipeline for district-level crop-type maps of Punjab and Sindh for every year from 2014 to 2025.</li>
-      <li>Designed a label-free rice-mapping method in Myanmar: optical crop-calendar rules find rice, the radar flooding signal confirms it.</li>
-      <li>Found that a random pixel split was hiding a model's failure on new dates, and rebuilt it with grouped validation and a domain-shift guard.</li>
-      <li>Lead Sentinel-1 research on maize detection in a persistently cloudy tropical climate (Philippines); NDVI time-series models for sugarcane in Pakistan and Brazil.</li>
-    </ul></div>
-  </div>
-  <div class="job">
-    <div class="when">Dec 2024 – Mar 2025</div>
-    <div><h3>GIS Developer</h3><div class="org">NESPAK · Public-sector engineering consultancy</div>
-    <ul><li>Built a real-time GIS progress-monitoring dashboard for the WASA Lahore Development Project, with field-survey data flowing in through ODK Central.</li></ul></div>
-  </div>
-  <div class="job">
-    <div class="when">Jul 2024 – Nov 2024</div>
-    <div><h3>Data Processing Analyst</h3><div class="org">Geospatial Planning and Engineering Associates</div>
-    <ul><li>Built high-resolution image classifiers and a deep-learning model for satellite image super-resolution; managed imagery quality assessment and ground-control planning.</li></ul></div>
-  </div>
-  <div class="job">
-    <div class="when">May 2024 – Jul 2024</div>
-    <div><h3>Geospatial Intern</h3><div class="org">Farmdar</div>
-    <ul><li>Wrote Sentinel-2 and Google Earth Engine crop-classification scripts and an initial maize-detection model, which led to a full-time role.</li></ul></div>
-  </div>
-</div></section>
-
-<section id="work"><div class="wrap">
-  <h2>Selected work</h2>
-  <p class="sub">Case study from my M.Phil. research: optical vs radar crop mapping in Punjab, Pakistan.</p>
-  <div class="case">
-    <img src="assets/crop_maps.jpg" alt="Crop maps from optical and radar models">
-    <div class="txt"><h3>District-scale crop mapping: optical vs radar</h3>
-    <p>I mapped crops across a full district with Sentinel-2 (optical) and Sentinel-1 (radar), and compared both for accuracy and computational cost. The optical model reached 94.5% overall accuracy and the radar model 86.8%, while radar kept working through the monsoon cloud gap.</p>
-    <div class="tags"><span class="tag">Sentinel-1</span><span class="tag">Sentinel-2</span><span class="tag">Machine learning</span><span class="tag">Accuracy assessment</span></div></div>
-  </div>
-  <div class="case">
-    <div class="txt"><h3>From satellite image to field-level map</h3>
-    <p>Model outputs were checked field by field against reference boundaries at four validation sites, so the reported accuracy reflects real fields, not just random pixels.</p>
-    <div class="tags"><span class="tag">Validation</span><span class="tag">Classification</span><span class="tag">GIS</span></div></div>
-    <img src="assets/field_validation.jpg" alt="Image, reference fields and model outputs at validation sites">
-  </div>
-  <div class="gallery">
-    <figure><img src="assets/cloud_mask.jpg" alt="Cloud masking"><figcaption>Cloud and shadow masking</figcaption></figure>
-    <figure><img src="assets/optical_vs_radar.jpg" alt="Optical vs radar"><figcaption>Optical vs radar: radar sees through cloud</figcaption></figure>
-    <figure><img src="assets/ndvi_timeseries.jpg" alt="NDVI time series"><figcaption>Gap-filled NDVI time series</figcaption></figure>
-    <figure><img src="assets/accuracy.jpg" alt="Accuracy comparison"><figcaption>Accuracy, Kappa and F1 comparison</figcaption></figure>
-  </div>
-</div></section>
-
-<section id="code"><div class="wrap">
-  <h2>Open-source code</h2>
-  <p class="sub">Public repositories on GitHub.</p>
-  <div class="grid3">
-    <div class="card repo"><span class="name">sar-rice-mapper</span><p>Sentinel-1 SAR preprocessing and time-series feature pipeline in Google Earth Engine for mapping paddy rice under monsoon cloud.</p><a href="https://github.com/dawood-labs/sar-rice-mapper" target="_blank" rel="noopener">View on GitHub →</a></div>
-    <div class="card repo"><span class="name">sar-crop-field-mapping</span><p>Field-level rice, sugarcane and cassava maps from radar plus optical data, XGBoost and LightGBM, one polygon per field.</p><a href="https://github.com/dawood-labs/sar-crop-field-mapping" target="_blank" rel="noopener">View on GitHub →</a></div>
-    <div class="card repo"><span class="name">cropstack</span><p>Multi-crop acreage mapping from Sentinel-2 and Landsat: NDVI time series Random Forest plus static XGBoost, Earth Engine or STAC data.</p><a href="https://github.com/dawood-labs/cropstack" target="_blank" rel="noopener">View on GitHub →</a></div>
-    <div class="card repo"><span class="name">cane_scanner</span><p>Sugarcane mapping with a date-robust static classifier, rebuilt after finding data leakage in a random pixel split.</p><a href="https://github.com/dawood-labs/cane_scanner" target="_blank" rel="noopener">View on GitHub →</a></div>
-    <div class="card repo"><span class="name">sar-maize-mapper</span><p>Sentinel-1 preprocessing with terrain flattening, track audit and a pixel time-series explorer for maize in cloudy regions.</p><a href="https://github.com/dawood-labs/sar-maize-mapper" target="_blank" rel="noopener">View on GitHub →</a></div>
-    <div class="card repo"><span class="name">geospatial-field-delineation</span><p>Field boundaries for any area from the open Fields of The World dataset: cleaned, measured and written to GeoPackage.</p><a href="https://github.com/dawood-labs/geospatial-field-delineation" target="_blank" rel="noopener">View on GitHub →</a></div>
-    <div class="card repo"><span class="name">field-boundary-reconciler</span><p>Reconciles model-detected crop polygons with surveyed field boundaries using clear geometric rules.</p><a href="https://github.com/dawood-labs/field-boundary-reconciler" target="_blank" rel="noopener">View on GitHub →</a></div>
-    <div class="card repo"><span class="name">geo-dissolve-pipeline</span><p>Dissolves shapefiles with 1.5M+ features with bounded memory, resumable state and parallel I/O.</p><a href="https://github.com/dawood-labs/geo-dissolve-pipeline" target="_blank" rel="noopener">View on GitHub →</a></div>
-    <div class="card repo"><span class="name">field-statistics-calculator</span><p>Area, perimeter and compactness statistics for field polygons from GeoParquet, as a library or command-line tool.</p><a href="https://github.com/dawood-labs/field-statistics-calculator" target="_blank" rel="noopener">View on GitHub →</a></div>
-  </div>
-</div></section>
-
-<section id="publications"><div class="wrap">
-  <h2>Publications</h2>
-  <p class="sub">Peer-reviewed research in remote sensing and machine learning.</p>
-  <div class="pub"><div class="t">Machine Learning and Deep Learning for Snowmelt Prediction: Long-Term Trends and Implications for Water Resource Management</div><div class="m"><b>Ahmad, D.</b>, &amp; Haseeb, M. (2026). <i>Water Resources Management</i>, 40(9), 407. <a href="https://doi.org/10.1007/s11269-026-04775-0" target="_blank" rel="noopener">DOI</a></div></div>
-  <div class="pub"><div class="t">Multi-Sensor Fusion and Deep Learning Approaches for Semantic Segmentation of Glacial Lakes</div><div class="m">Xue, L., Khan, A., Haseeb, M., Aqnouy, M., <b>Ahmad, D.</b>, et al. (2025). <i>IEEE JSTARS</i>. <a href="https://doi.org/10.1109/JSTARS.2025.3576187" target="_blank" rel="noopener">DOI</a></div></div>
-  <div class="pub"><div class="t">GeoAI-based Spatio-Temporal Dynamics and Explainable AI Modelling of Carbon Monoxide over Pakistan using Sentinel-5P TROPOMI (2018 to 2026)</div><div class="m">Bano, S., Javed, A. M., Mahmood, K., <b>Ahmad, D.</b>, Tariq, S., &amp; Parvez, S. Under review.</div></div>
-  <div class="pub"><div class="t">Two further manuscripts under review</div><div class="m">Sentinel-1/Sentinel-2 rice classification, and operational maize mapping in Punjab, Pakistan.</div></div>
-</div></section>
-
-<section id="skills"><div class="wrap">
-  <h2>Skills and education</h2>
-  <p class="sub">&nbsp;</p>
-  <div class="skills">
-    <div class="card"><h3>Technical skills</h3>
-      <div class="tags">
-        <span class="tag">Python</span><span class="tag">NumPy / Pandas</span><span class="tag">GDAL / Rasterio</span><span class="tag">GeoPandas / Shapely</span><span class="tag">SQL / PostGIS</span><span class="tag">Docker</span><span class="tag">Git</span><span class="tag">Linux</span><span class="tag">R</span>
-        <span class="tag">PyTorch</span><span class="tag">TensorFlow / Keras</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">SAMGeo</span>
-        <span class="tag">Google Earth Engine</span><span class="tag">STAC</span><span class="tag">QGIS</span><span class="tag">ArcGIS Pro</span><span class="tag">ERDAS IMAGINE</span>
-        <span class="tag">Sentinel-1 SAR</span><span class="tag">Sentinel-2</span><span class="tag">Landsat</span><span class="tag">Sentinel-5P</span><span class="tag">MODIS</span>
-        <span class="tag">Django</span><span class="tag">GeoServer</span><span class="tag">Leaflet</span><span class="tag">OpenLayers</span><span class="tag">ODK Central</span>
-      </div></div>
-    <div class="card"><h3>Education</h3>
-      <p><b style="color:var(--text)">M.Phil. Space Science</b>, 2024 – 2026<br>Institute of Space Science, University of the Punjab, Lahore<br>Gold Medalist, CGPA 3.98 / 4.00. Thesis: Sentinel-1 SAR vs Sentinel-2 optical data for crop classification.</p>
-      <p style="margin-top:14px"><b style="color:var(--text)">B.S. Space Science</b>, 2020 – 2024<br>Department of Space Science, University of the Punjab, Lahore<br>CGPA 3.83 / 4.00. Final-year project: WebGIS application with Leaflet, GeoServer, PostGIS and Django.</p>
-    </div>
-  </div>
-</div></section>
-
-<section id="contact" class="contact"><div class="wrap">
-  <h2>Let's work together</h2>
-  <p class="sub">Have satellite or GIS data that needs answers? Get in touch.</p>
-  <div class="btns">
-    <a class="btn primary" href="mailto:dawoodahmad.spsc@gmail.com">dawoodahmad.spsc@gmail.com</a>
-    <a class="btn ghost" href="https://linkedin.com/in/dawood-ahmad-74b933386" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="btn ghost" href="https://github.com/dawood-labs" target="_blank" rel="noopener">GitHub</a>
-  </div>
-</div></section>
-
-<footer>© 2026 Dawood Ahmad · Lahore, Pakistan</footer>
-</body>
-</html>
+<section id="code"><div class="wrap"><div class="kicker">Open source</div><h2>Code on GitHub</h2><p class="sub">Public repositories with full documentation, from radar preprocessing to geometry tools.</p><div class="repos">
+<a class="repo rv" href="https://github.com/dawood-labs/sar-rice-mapper" target="_blank" rel="noopener"><div class="g">Radar and rice</div><div class="n">sar-rice-mapper</div><p>Sentinel-1 preprocessing, label-free optical + radar rice rule, validation and audits for 132 AOIs.</p></a>
+<a class="repo rv" href="https://github.com/dawood-labs/sar-crop-field-mapping" target="_blank" rel="noopener"><div class="g">Radar and rice</div><div class="n">sar-crop-field-mapping</div><p>Field-level rice, sugarcane and cassava maps, plus province-scale standing sugarcane.</p></a>
+<a class="repo rv" href="https://github.com/dawood-labs/sar-maize-mapper" target="_blank" rel="noopener"><div class="g">Radar and rice</div><div class="n">sar-maize-mapper</div><p>Sentinel-1 stacks with terrain flattening, track audit and a pixel explorer for maize.</p></a>
+<a class="repo rv" href="https://github.com/dawood-labs/cropstack" target="_blank" rel="noopener"><div class="g">Crop mapping</div><div class="n">cropstack</div><p>Multi-crop acreage maps from Sentinel-2 and Landsat, GEE or STAC, RF + XGBoost.</p></a>
+<a class="repo rv" href="https://github.com/dawood-labs/cane_scanner" target="_blank" rel="noopener"><div class="g">Crop mapping</div><div class="n">cane_scanner</div><p>Sugarcane mapping with a date-robust static classifier and honest validation.</p></a>
+<a class="repo rv" href="https://github.com/dawood-labs/cotton_scanner" target="_blank" rel="noopener"><div class="g">Crop mapping</div><div class="n">cotton_scanner</div><p>Cotton time-series model with a date guard that stops silent shifts.</p></a>
+<a class="repo rv" href="https://github.com/dawood-labs/geospatial-field-delineation" target="_blank" rel="noopener"><div class="g">Fields and geometry</div><div class="n">geospatial-field-delineation</div><p>Field boundaries for any area from open FTW data, cleaned and measured.</p></a>
+<a class="repo rv" href="https://github.com/dawood-labs/field-boundary-reconciler" target="_blank" rel="noopener"><div class="g">Fields and geometry</div><div class="n">field-boundary-reconciler</div><p>Reconciles model crop polygons with surveyed field boundaries.</p></a>
+<a class="repo rv" href="https://github.com/dawood-labs/geo-dissolve-pipeline" target="_blank" rel="noopener"><div class="g">Fields and geometry</div><div class="n">geo-dissolve-pipeline</div><p>Memory-bounded, resumable dissolve for 1.5M+ features.</p></a>
+<a class="repo rv" href="https://github.com/dawood-labs/crop-mask-processor" target="_blank" rel="noopener"><div class="g">Fields and geometry</div><div class="n">crop-mask-processor</div><p>Removes overlaps between crop layers, clips to districts, writes acreage workbooks.</p></a>
+<a class="repo rv" href="https://github.com/dawood-labs/field-statistics-calculator" target="_blank" rel="noopener"><div class="g">Fields and geometry</div><div class="n">field-statistics-calculator</div><p>Area, perimeter and compactness distributions from GeoParquet.</p></a>
+</div></div></section>
+<section id="skills" style="background:var(--bg2)"><div class="wrap"><div class="kicker">Toolbox</div><h2>Skills and education</h2><p class="sub">The tools I use every day, and where I learned the science behind them.</p><div class="skills">
+<div class="card sk rv"><h3>Programming and data</h3><div class="tags"><span>Python</span><span>NumPy</span><span>Pandas</span><span>GDAL</span><span>Rasterio</span><span>GeoPandas</span><span>Shapely</span><span>SQL</span><span>PostgreSQL/PostGIS</span><span>R</span><span>Git</span><span>Linux</span><span>Docker</span></div></div>
+<div class="card sk rv"><h3>Machine learning</h3><div class="tags"><span>PyTorch</span><span>TensorFlow/Keras</span><span>scikit-learn</span><span>XGBoost</span><span>LightGBM</span><span>Random Forest</span><span>U-Net</span><span>SAMGeo</span><span>Time-series classification</span><span>Semantic segmentation</span><span>Super-resolution</span></div></div>
+<div class="card sk rv"><h3>Remote sensing</h3><div class="tags"><span>Sentinel-1 SAR</span><span>Sentinel-2</span><span>Landsat</span><span>Sentinel-5P TROPOMI</span><span>MODIS</span><span>Google Earth Engine</span><span>STAC</span><span>QGIS</span><span>ArcGIS Pro</span><span>ERDAS IMAGINE</span></div></div>
+<div class="card sk rv"><h3>Web and services</h3><div class="tags"><span>Django</span><span>GeoServer</span><span>Leaflet</span><span>OpenLayers</span><span>ODK Central</span><span>Real-time dashboards</span></div></div>
+<div class="card sk rv"><h3>Validation</h3><div class="tags"><span>Grouped spatial and temporal validation</span><span>Leakage detection</span><span>Domain-shift checks</span><span>Field-survey accuracy assessment</span></div></div>
+</div><div class="edu" style="margin-top:20px">
+<div class="card rv"><div class="kicker" style="font-size:12px">2024 – 2026</div><h3 style="margin-top:6px">M.Phil. Space Science</h3><p>Institute of Space Science, University of the Punjab, Lahore</p><p style="margin-top:8px;color:var(--text)">Gold Medalist · CGPA 3.98 / 4.00 · Thesis: Sentinel-1 SAR vs Sentinel-2 optical data for crop classification</p></div>
+<div class="card rv"><div class="kicker" style="font-size:12px">2020 – 2024</div><h3 style="margin-top:6px">B.S. Space Science</h3><p>Department of Space Science, University of the Punjab, Lahore</p><p style="margin-top:8px;color:var(--text)">CGPA 3.83 / 4.00 · Final-year project: WebGIS application with Leaflet, GeoServer, PostGIS and Django · B.S. research on snowmelt prediction published in Water Resources Management (2026)</p></div>
+</div></div></section>
+<section id="updates"><div class="wrap"><div class="kicker">Log</div><h2>Achievements and updates</h2><p class="sub">A running record of milestones.</p><div class="updates">
+<div class="up rv"><div class="d">2026-11</div><div>Launched this portfolio and started offering geospatial services online.</div></div>
+<div class="up rv"><div class="d">2026-10</div><div>Started national-scale sugarcane mapping of Thailand from Sentinel-1 radar.</div></div>
+<div class="up rv"><div class="d">2026-10</div><div>Punjab and Sindh crop maps for 2014 to 2025 accepted by the client.</div></div>
+<div class="up rv"><div class="d">2026-09</div><div>Myanmar rice map validated on 3,533 surveyed plots; radar-only model reaches 97.6% held-out recall.</div></div>
+<div class="up rv"><div class="d">2026</div><div>M.Phil. Space Science completed, Gold Medalist.</div></div>
+<div class="up rv"><div class="d">2026</div><div>First-author paper published in Water Resources Management.</div></div>
+<div class="up rv"><div class="d">2025</div><div>Co-authored paper published in IEEE JSTARS.</div></div>
+<div class="up rv"><div class="d">2025-03</div><div>Promoted to Machine Learning Engineer and Team Lead at Farmdar.</div></div>
+</div></div></section>
+<section id="contact"><div class="wrap"><div class="cta rv"><div class="kicker">Contact</div><h2>Have satellite or GIS data that needs answers?</h2><p class="sub" style="margin:0 auto 10px">I am open to remote projects, collaborations and full-time roles.</p><div class="btns"><a class="btn p" href="mailto:dawoodahmad.spsc@gmail.com">dawoodahmad.spsc@gmail.com</a><a class="btn g" href="https://linkedin.com/in/dawood-ahmad-74b933386" target="_blank" rel="noopener">LinkedIn</a><a class="btn g" href="https://github.com/dawood-labs" target="_blank" rel="noopener">GitHub</a></div></div></div></section>
+<footer><div class="wrap"><span>© 2026 Dawood Ahmad · Lahore, Pakistan · open to remote work</span><span><a href="https://github.com/dawood-labs" target="_blank" rel="noopener">GitHub</a> · <a href="https://linkedin.com/in/dawood-ahmad-74b933386" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:dawoodahmad.spsc@gmail.com">Email</a></span></div></footer>
+<div class="lb"><img alt=""></div><script>
+const n=document.querySelector('nav');const f=()=>n.classList.toggle('solid',scrollY>30);addEventListener('scroll',f);f();
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const lb=document.querySelector('.lb');if(lb){document.querySelectorAll('.gal img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on')}
+</script></body></html>

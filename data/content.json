@@ -1,0 +1,883 @@
+{
+ "person": {
+  "name": "Dawood Ahmad",
+  "title": "Geospatial Machine Learning Engineer",
+  "tagline": "I turn satellite data into maps, models and decisions.",
+  "intro": "Machine Learning Engineer and Team Lead building production satellite mapping systems, from single fields to whole countries, with radar and optical time series, machine learning and geospatial foundation models. My work runs for agribusinesses and development agencies across Asia, Africa and South America.",
+  "location": "Lahore, Pakistan · open to remote work",
+  "email": "dawoodahmad.spsc@gmail.com",
+  "github": "https://github.com/dawood-labs",
+  "linkedin": "https://linkedin.com/in/dawood-ahmad-74b933386",
+  "photo": "assets/img/dawood.jpg",
+  "cv": "assets/docs/Dawood_Ahmad_CV.pdf"
+ },
+ "impact": [
+  {
+   "value": "6",
+   "label": "countries mapped",
+   "note": "Pakistan, Thailand, Myanmar, Philippines, South Africa, Brazil"
+  },
+  {
+   "value": "132",
+   "label": "areas of interest in one rice project",
+   "note": "radar and optical, end to end"
+  },
+  {
+   "value": "3,533",
+   "label": "surveyed plots used for validation",
+   "note": "rice, Myanmar 2026"
+  },
+  {
+   "value": "422,763",
+   "label": "field boundaries delineated",
+   "note": "with a SAMGeo pipeline"
+  },
+  {
+   "value": "12 yrs",
+   "label": "of crop maps, 2014 to 2025",
+   "note": "Punjab and Sindh, Pakistan"
+  },
+  {
+   "value": "8,356",
+   "label": "radar passes audited",
+   "note": "artefact passes found and removed"
+  }
+ ],
+ "expertise": [
+  {
+   "icon": "radar",
+   "title": "Radar (SAR) remote sensing",
+   "text": "Sentinel-1 VV/VH time series, terrain flattening, flood and water detection, and crop mapping where clouds hide the season."
+  },
+  {
+   "icon": "wave",
+   "title": "Optical time series",
+   "text": "Sentinel-2 and Landsat compositing, cloud masking, Whittaker smoothing, crop calendars, sowing and harvest detection."
+  },
+  {
+   "icon": "brain",
+   "title": "Machine and deep learning",
+   "text": "Random Forest, XGBoost, LightGBM, CNN, U-Net and segmentation models, with validation that cannot flatter itself."
+  },
+  {
+   "icon": "grid",
+   "title": "Geospatial foundation models",
+   "text": "Segment Anything (SAMGeo) for field boundaries, open Fields of The World data, polygon cleaning and topology."
+  },
+  {
+   "icon": "flow",
+   "title": "Production pipelines",
+   "text": "Google Earth Engine, STAC, GCS and S3, Docker, resumable province-scale runs, guards and tests that stop silent errors."
+  },
+  {
+   "icon": "map",
+   "title": "WebGIS and dashboards",
+   "text": "Django, GeoServer, PostGIS, Leaflet, OpenLayers and ODK Central for real-time progress and field data."
+  }
+ ],
+ "themes": [
+  "Rice",
+  "Sugarcane",
+  "Maize",
+  "Cotton",
+  "Wheat",
+  "Cassava",
+  "Glacial lakes",
+  "Snowmelt",
+  "Air quality (CO)",
+  "Land cover",
+  "Floods and water",
+  "Field boundaries"
+ ],
+ "projects": [
+  {
+   "slug": "label-free-rice-mapping",
+   "title": "Label-free rice mapping under monsoon cloud",
+   "place": "Myanmar · 2025-2026",
+   "summary": "A rice map for 132 areas with no training labels: the optical crop calendar finds rice, the radar flooding signal confirms it.",
+   "tags": [
+    "Sentinel-1",
+    "Sentinel-2",
+    "Phenology",
+    "SAMGeo",
+    "Validation"
+   ],
+   "metrics": [
+    [
+     "132",
+     "AOIs mapped"
+    ],
+    [
+     "3,533",
+     "surveyed plots"
+    ],
+    [
+     "99.3%",
+     "best plot-interior recall"
+    ],
+    [
+     "7.1% → 0%",
+     "evergreen false positives"
+    ]
+   ],
+   "problem": "Rice is grown in the cloudiest months of the year and no labelled fields existed, so a normal supervised model could not even start. A first radar-only draft looked convincing, but a pixel-by-pixel check against Sentinel-2 showed its key radar feature peaked after the crop had already been cut: it was measuring harvested fields, not the growing canopy.",
+   "data": [
+    "Sentinel-2: 93 to 172 dates per AOI, composited into 5-day windows",
+    "Sentinel-1: 266 tracks, 12 to 18 passes each, ascending and descending",
+    "3,533 surveyed plots reported as standing rice",
+    "422,763 field polygons from a SAMGeo delineation pipeline"
+   ],
+   "method": [
+    "Composite cloud-masked Sentinel-2 into 5-day windows and report gaps instead of inventing them",
+    "Read each pixel's crop cycle: a long bare trough, a fast climb, a canopy still standing on the map date",
+    "Confirm the transplanting flood with a radar drop of at least 3 dB below the field's own dry level",
+    "Audit every radar pass: drop artefact passes where evergreen ground jumps 3 dB or more",
+    "Aggregate to field polygons with a second-opinion confidence flag, then review 430 fields by eye and fix 23 kinds of problems, each measured before adoption"
+   ],
+   "results": [
+    "Plot-interior recall of 99.3%, 99.4% and 98.4% in the main regions",
+    "Evergreen false positives cut from 7.1% to 0.0%",
+    "Rule on field-mean curves agrees with the pixel vote on 89.5% of field area",
+    "97% of rice field acres were seen clear within 30 days of the map date: standing rice is observed, not extrapolated"
+   ],
+   "lesson": "Hard-coded thresholds do not survive real data. Shape, timing and rate of change of the crop curve matter more than any single value, and every number must say what it is compared against.",
+   "repo": "https://github.com/dawood-labs/sar-rice-mapper",
+   "images": []
+  },
+  {
+   "slug": "rice-from-radar-alone",
+   "title": "Rice from radar alone",
+   "place": "Myanmar · 2026",
+   "summary": "Where clouds block every optical image, a radar-only model reproduces the validated rice map on areas it never saw.",
+   "tags": [
+    "Sentinel-1",
+    "XGBoost",
+    "Cross-validation"
+   ],
+   "metrics": [
+    [
+     "131",
+     "radar features per pixel"
+    ],
+    [
+     "97.6%",
+     "held-out plot recall"
+    ],
+    [
+     "5-fold",
+     "whole-AOI cross-validation"
+    ]
+   ],
+   "problem": "Some areas sit under cloud so heavy that no optical time series can be built at all. Could rice be mapped there from Sentinel-1 alone, and how well, measured honestly?",
+   "data": [
+    "Both Sentinel-1 orbits merged into one series, a pass about every 6 days",
+    "Surveyed plots for recall, optical-defined negatives (evergreen, water, bare, cut fields)",
+    "The validated optical + radar map of all 132 AOIs as the teacher"
+   ],
+   "method": [
+    "131 features per pixel: a fixed 6-day VH, VV and VH-VV series plus season summaries and a flood test",
+    "Train XGBoost on the teacher's confident classes only",
+    "Leave out whole AOIs and whole regions in cross-validation, because neighbouring pixels are near-copies and a random split flatters every number"
+   ],
+   "results": [
+    "Held-out plot recall of 97.6%, 97.1% and 95.6%",
+    "Scored on plots, on negatives and on acre agreement with the teacher for areas the model never saw"
+   ],
+   "lesson": "How you split the data decides whether the score means anything.",
+   "repo": "https://github.com/dawood-labs/sar-rice-mapper",
+   "images": []
+  },
+  {
+   "slug": "province-scale-sugarcane",
+   "title": "Province and national-scale sugarcane mapping",
+   "place": "Thailand and Pakistan · 2025-2026",
+   "summary": "Standing sugarcane at 10 m for whole provinces from a season of radar and optical data, delivered as clean field polygons with acres.",
+   "tags": [
+    "Sentinel-1",
+    "Sentinel-2",
+    "LightGBM",
+    "S3",
+    "Airflow-ready"
+   ],
+   "metrics": [
+    [
+     "10 m",
+     "resolution"
+    ],
+    [
+     "Province",
+     "one-command runs"
+    ],
+    [
+     "National",
+     "radar-based mapping of Thailand"
+    ]
+   ],
+   "problem": "Mills and agribusinesses need to know how much cane is still standing, across entire provinces, every season, with polygons they can use.",
+   "data": [
+    "A season of Sentinel-1 radar and Sentinel-2 optical images",
+    "District and grid tiles across each province"
+   ],
+   "method": [
+    "LightGBM time-series model plus a colour model",
+    "A recall rule that adds young plant cane the model misses",
+    "Sieve and hole-fill, then polygons under 0.15 acres dropped",
+    "Province mosaic and province GeoPackage of cane polygons with acres",
+    "Resumable, Airflow-ready pipeline with state on S3: the province name is the only required input"
+   ],
+   "results": [
+    "Whole provinces mapped in one resumable run",
+    "National-scale sugarcane mapping of Thailand from Sentinel-1"
+   ],
+   "lesson": "At province scale, resumability and clean state matter as much as the model.",
+   "repo": "https://github.com/dawood-labs/sar-crop-field-mapping",
+   "images": []
+  },
+  {
+   "slug": "field-level-crop-maps",
+   "title": "Field-level rice, sugarcane and cassava maps",
+   "place": "Southeast Asia · 2026",
+   "summary": "One polygon per field with a crop class, built mainly from radar, checked and corrected with optical images and blind human review.",
+   "tags": [
+    "Sentinel-1",
+    "Sentinel-2",
+    "XGBoost",
+    "Topology",
+    "QC"
+   ],
+   "metrics": [
+    [
+     "~33,000 ha",
+     "per AOI run"
+    ],
+    [
+     "3 crops",
+     "rice, sugarcane, cassava"
+    ],
+    [
+     "Blind",
+     "review labels"
+    ]
+   ],
+   "problem": "A client needed field-level crop maps for a district-sized area where monsoon cloud hides most optical images.",
+   "data": [
+    "Every Sentinel-1 pass of two orbits, every Sentinel-2 date with all cloud masks",
+    "Ground points and field delineation polygons",
+    "DEM and rainfall"
+   ],
+   "method": [
+    "Monthly radar features plus crop-calendar features (flooded dates, lowest VH, canopy growth, regrowth)",
+    "XGBoost: rice vs not rice, then cane-cassava vs the rest",
+    "Blind reviews: analysts label pixels on evidence sheets without seeing the model, and every round becomes new training data and an honest test",
+    "Field polygons by majority rule, mixed fields cut with straight lines, no overlaps or touching geometry",
+    "Final Sentinel-2 QC and cane/cassava split"
+   ],
+   "results": [
+    "Delivered shapefile and GeoParquet, one feature per field with class and acres",
+    "Every geometry passed automated QC before delivery"
+   ],
+   "lesson": "If reviewers can see the model's answer, the review is not a test.",
+   "repo": "https://github.com/dawood-labs/sar-crop-field-mapping",
+   "images": []
+  },
+  {
+   "slug": "multi-year-crop-maps",
+   "title": "Twelve years of crop maps, 2014 to 2025",
+   "place": "Punjab and Sindh, Pakistan",
+   "summary": "District-level maps of sugarcane, wheat, maize and rice for every year since 2014, for an international development agency.",
+   "tags": [
+    "Sentinel-2",
+    "Landsat 8",
+    "Random Forest",
+    "XGBoost",
+    "STAC",
+    "GEE"
+   ],
+   "metrics": [
+    [
+     "12",
+     "years mapped"
+    ],
+    [
+     "4",
+     "crops"
+    ],
+    [
+     "2",
+     "provinces"
+    ]
+   ],
+   "problem": "Long-term crop statistics need consistent maps across years and sensors, including years before Sentinel-2 existed.",
+   "data": [
+    "Sentinel-2 and Landsat 8 time series",
+    "Training data built for each crop"
+   ],
+   "method": [
+    "NDVI every 8 days, Whittaker-smoothed per pixel, classified with Random Forest",
+    "A cloud-free static image classified with XGBoost only where the time-series model found the crop",
+    "Sieve and vectorise to polygons",
+    "Earth Engine or an open STAC catalogue, switchable in config, after the client could no longer use Earth Engine"
+   ],
+   "results": [
+    "Maps for every year from 2014 to 2025, accepted by the client",
+    "One pipeline instead of three diverging notebooks"
+   ],
+   "lesson": "Make data sources swappable from day one: they change.",
+   "repo": "https://github.com/dawood-labs/cropstack",
+   "images": []
+  },
+  {
+   "slug": "catching-hidden-failures",
+   "title": "Catching hidden model failures",
+   "place": "Pakistan · 2026",
+   "summary": "Two production bugs that looked like good results: a validation split that hid a model's failure, and a date shift that inflated area by 63%.",
+   "tags": [
+    "Data leakage",
+    "Domain shift",
+    "Testing"
+   ],
+   "metrics": [
+    [
+     "35.9%",
+     "true recall on a new date"
+    ],
+    [
+     "+63%",
+     "area inflation found"
+    ],
+    [
+     "78/78",
+     "tests passing after fix"
+    ]
+   ],
+   "problem": "A sugarcane model reported excellent scores, and a cotton pipeline produced plausible maps. Both were wrong in ways no metric showed.",
+   "data": [
+    "Sentinel-2 acquisitions across the season",
+    "Training tables and inference configs"
+   ],
+   "method": [
+    "Sugarcane: the static model was trained on seven dates inside one three-week window, with a random per-pixel split. I tested it on other dates: recall fell from 85.0% (10 Aug) to 35.9% (4 Sep)",
+    "Rebuilt it with grouped validation, multi-date training and a domain-shift guard",
+    "Cotton: the inference window started one step late, so every feature was read 8 days off. Area jumped from 4.63% to 7.57% of the test area",
+    "Fixed the dates, added a guard that stops the run if dates do not match training, and wrote tests"
+   ],
+   "results": [
+    "A date-robust sugarcane classifier with honest validation",
+    "A cotton pipeline that refuses to run on mismatched dates"
+   ],
+   "lesson": "A high score from a random pixel split is a question, not an answer.",
+   "repo": "https://github.com/dawood-labs/cane_scanner",
+   "images": []
+  },
+  {
+   "slug": "sar-maize-cloudy-tropics",
+   "title": "SAR maize mapping in the cloudy tropics",
+   "place": "Philippines · 2025-2026",
+   "summary": "Leading radar research on maize detection in a persistently cloudy climate.",
+   "tags": [
+    "Sentinel-1",
+    "Terrain flattening",
+    "GEE"
+   ],
+   "metrics": [
+    [
+     "6-12 days",
+     "radar revisit through cloud"
+    ],
+    [
+     "VV + VH",
+     "analysis-ready stacks"
+    ]
+   ],
+   "problem": "In persistently cloudy regions optical satellites miss the whole maize season.",
+   "data": [
+    "Sentinel-1 GRD scenes",
+    "Ground-truth polygons"
+   ],
+   "method": [
+    "Master grid and chunking, track and gap audit including rain",
+    "Radiometric terrain flattening and preprocessing in Earth Engine per chunk and track",
+    "Download with integrity checks, per-date stacks and QA",
+    "Pixel explorer to compare any pixel's time series with ground truth"
+   ],
+   "results": [
+    "Analysis-ready multi-date VV + VH stacks and a pixel index for model development"
+   ],
+   "lesson": "Audit tracks, dates and rain before modelling: radar has its own clouds.",
+   "repo": "https://github.com/dawood-labs/sar-maize-mapper",
+   "images": []
+  },
+  {
+   "slug": "field-boundaries-at-scale",
+   "title": "Field boundaries at scale",
+   "place": "Thailand, South Africa, Myanmar",
+   "summary": "End-to-end field delineation built around Segment Anything (SAMGeo), plus tools for open boundaries and survey reconciliation.",
+   "tags": [
+    "SAMGeo",
+    "Segment Anything",
+    "FTW",
+    "Topology"
+   ],
+   "metrics": [
+    [
+     "422,763",
+     "fields in one project"
+    ],
+    [
+     "0.995",
+     "IoU against reference boundaries"
+    ],
+    [
+     "1.5M+",
+     "features dissolved in one run"
+    ]
+   ],
+   "problem": "Crop maps are only useful to farms and mills when they follow real field boundaries.",
+   "data": [
+    "High-resolution and Sentinel imagery",
+    "Open Fields of The World boundaries",
+    "Surveyed field boundaries"
+   ],
+   "method": [
+    "Imagery preparation, SAMGeo segmentation, polygon cleaning and simplification",
+    "Fields of The World boundaries clipped, cleaned and measured for any area",
+    "Rules that reconcile model polygons with surveyed boundaries",
+    "Memory-bounded, resumable dissolve for 1.5M+ features"
+   ],
+   "results": [
+    "Pipeline used for sugarcane mapping in Thailand and South Africa",
+    "422,763 fields delineated for the Myanmar rice project",
+    "IoU of 0.995 against reference boundaries"
+   ],
+   "lesson": "Geometry quality is a deliverable, not an afterthought.",
+   "repo": "https://github.com/dawood-labs/geospatial-field-delineation",
+   "images": []
+  },
+  {
+   "slug": "realtime-webgis-dashboard",
+   "title": "Real-time WebGIS progress dashboard",
+   "place": "NESPAK · Lahore · 2024-2025",
+   "summary": "A live GIS dashboard for the WASA Lahore Development Project, with field-survey data flowing in through ODK Central.",
+   "tags": [
+    "WebGIS",
+    "ODK Central",
+    "Dashboards",
+    "PostGIS"
+   ],
+   "metrics": [
+    [
+     "Real time",
+     "progress tracking"
+    ],
+    [
+     "Field",
+     "survey data in live"
+    ]
+   ],
+   "problem": "Engineers and managers needed to see construction progress across the city as it happened, not in weekly reports.",
+   "data": [
+    "Field surveys collected through ODK Central",
+    "Project spatial layers"
+   ],
+   "method": [
+    "Field data captured on mobile forms in ODK Central",
+    "Data flowing into a spatial database",
+    "Web map and dashboard showing progress in real time"
+   ],
+   "results": [
+    "Live progress monitoring for a public-sector infrastructure project"
+   ],
+   "lesson": "",
+   "repo": "",
+   "images": []
+  },
+  {
+   "slug": "snowmelt-prediction",
+   "title": "Snowmelt prediction with machine and deep learning",
+   "place": "Northern Pakistan · B.S. research, published 2026",
+   "summary": "67 years of snowmelt (1948-2014) modelled from 38 variables; an LSTM reached R² 0.97. First-author paper in Water Resources Management.",
+   "tags": [
+    "LSTM",
+    "Random Forest",
+    "GLDAS",
+    "Feature selection",
+    "Hydrology"
+   ],
+   "metrics": [
+    [
+     "0.9697",
+     "LSTM R²"
+    ],
+    [
+     "0.9263",
+     "Random Forest R²"
+    ],
+    [
+     "38",
+     "independent variables"
+    ],
+    [
+     "1948-2014",
+     "record analysed"
+    ]
+   ],
+   "problem": "Northern Pakistan depends on snowmelt for irrigation and drinking water, yet melt is driven by many interacting factors and is hard to predict.",
+   "data": [
+    "GLDAS land data assimilation records, 1948 to 2014",
+    "38 independent variables including albedo, surface skin temperature, radiation fluxes, soil moisture and runoff"
+   ],
+   "method": [
+    "Data transformation and Recursive Feature Elimination to find key predictors",
+    "Linear Regression and Random Forest models",
+    "LSTM deep learning model for temporal dependencies",
+    "Feature importance analysis of the drivers of melt"
+   ],
+   "results": [
+    "LSTM: R² 0.9697, MAE 0.0035 kg m⁻²",
+    "Random Forest: R² 0.9263, RMSE 0.0094 kg m⁻², far ahead of Linear Regression",
+    "Key drivers: storm surface runoff, soil moisture content and ground heat flux"
+   ],
+   "lesson": "This B.S. project grew into my first first-author journal paper.",
+   "repo": "",
+   "paper": "https://doi.org/10.1007/s11269-026-04775-0",
+   "images": []
+  },
+  {
+   "slug": "glacial-lake-segmentation",
+   "title": "Glacial lake segmentation with deep learning",
+   "place": "High mountain Asia · published 2025",
+   "summary": "Multi-sensor fusion and deep segmentation models for mapping glacial lakes, a key input for outburst-flood risk.",
+   "tags": [
+    "Sentinel-2",
+    "U-Net",
+    "Semantic segmentation",
+    "Multi-sensor fusion"
+   ],
+   "metrics": [
+    [
+     "IEEE JSTARS",
+     "journal"
+    ],
+    [
+     "3",
+     "architectures compared"
+    ]
+   ],
+   "problem": "Glacial lakes grow as glaciers retreat, and their outburst floods threaten downstream communities. Mapping them reliably across large mountain areas needs automation.",
+   "data": [
+    "Sentinel-2 and other sensors fused for lake detection"
+   ],
+   "method": [
+    "U-Net, a simple CNN and ASPP-SegNet compared for semantic segmentation",
+    "Multi-sensor fusion of inputs"
+   ],
+   "results": [
+    "Published in IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (2025)"
+   ],
+   "lesson": "",
+   "repo": "",
+   "paper": "https://doi.org/10.1109/JSTARS.2025.3576187",
+   "images": []
+  },
+  {
+   "slug": "optical-vs-radar-thesis",
+   "title": "Optical vs radar crop mapping (M.Phil. research)",
+   "place": "Punjab, Pakistan · 2024-2026",
+   "summary": "A district-wide comparison of Sentinel-2 and Sentinel-1 for crop classification, including accuracy and computational cost.",
+   "tags": [
+    "Sentinel-1",
+    "Sentinel-2",
+    "Machine learning",
+    "Accuracy assessment"
+   ],
+   "metrics": [
+    [
+     "94.5%",
+     "optical overall accuracy"
+    ],
+    [
+     "86.8%",
+     "radar overall accuracy"
+    ],
+    [
+     "Gold Medal",
+     "M.Phil. Space Science"
+    ]
+   ],
+   "problem": "Optical data is accurate but fails in the monsoon; radar works through cloud but is harder to read. Which should a mapping programme use, and at what cost?",
+   "data": [
+    "Sentinel-2 and Sentinel-1 time series over a full district",
+    "Reference data at validation sites"
+   ],
+   "method": [
+    "Cloud and shadow masking, gap-filled NDVI with Whittaker smoothing",
+    "Classification with both sensors",
+    "Accuracy, Kappa and F1 per class, and field-level checks at four sites",
+    "Comparison of computational trade-offs"
+   ],
+   "results": [
+    "Optical 94.5% vs radar 86.8% overall accuracy",
+    "Radar kept working through the monsoon cloud gap"
+   ],
+   "lesson": "",
+   "repo": "",
+   "images": [
+    "assets/img/crop_maps.jpg",
+    "assets/img/field_validation.jpg",
+    "assets/img/accuracy.jpg",
+    "assets/img/ndvi_timeseries.jpg",
+    "assets/img/cloud_mask.jpg",
+    "assets/img/optical_vs_radar.jpg"
+   ]
+  }
+ ],
+ "experience": [
+  {
+   "when": "Mar 2025 – Present",
+   "role": "Machine Learning Engineer and Team Lead",
+   "org": "Farmdar",
+   "orgnote": "Agri-tech and Earth observation, Lahore",
+   "points": [
+    "Lead a team of machine-learning and remote-sensing engineers delivering satellite crop-monitoring products to agribusinesses and development agencies in Asia, Africa and South America.",
+    "Myanmar rice: designed a label-free method (optical crop calendar + radar flood confirmation) across 132 AOIs, validated on 3,533 surveyed plots with plot-interior recall up to 99.4%; built a radar-only XGBoost model with 97.6% held-out recall for cloud-blocked areas.",
+    "Thailand: national-scale sugarcane mapping from Sentinel-1 radar; field delineation for sugar mills.",
+    "Pakistan: training data, models and pipeline for district-level crop maps of Punjab and Sindh for every year 2014 to 2025 (sugarcane, wheat, maize, rice, cotton).",
+    "Built the end-to-end SAMGeo field-boundary pipeline used in Thailand, South Africa and Myanmar (422,763 fields in one project).",
+    "Philippines: lead Sentinel-1 research on maize detection in a persistently cloudy climate. Brazil and Pakistan: NDVI time-series models for sugarcane sowing and harvest windows.",
+    "Found and fixed hidden failures: a random pixel split that hid a 35.9% recall on new dates, and a date-window bug that inflated cotton area by 63%."
+   ]
+  },
+  {
+   "when": "Dec 2024 – Mar 2025",
+   "role": "GIS Developer",
+   "org": "NESPAK",
+   "orgnote": "Public-sector engineering consultancy",
+   "points": [
+    "Built a real-time GIS progress-monitoring dashboard for the WASA Lahore Development Project.",
+    "Set up field-survey data collection and live ingestion through ODK Central."
+   ]
+  },
+  {
+   "when": "Jul 2024 – Nov 2024",
+   "role": "Data Processing Analyst",
+   "org": "Geospatial Planning and Engineering Associates",
+   "orgnote": "Geospatial services",
+   "points": [
+    "Built high-resolution image classifiers and a deep-learning model for satellite image super-resolution.",
+    "Managed imagery quality assessment and ground-control planning."
+   ]
+  },
+  {
+   "when": "May 2024 – Jul 2024",
+   "role": "Geospatial Intern",
+   "org": "Farmdar",
+   "orgnote": "Agri-tech and Earth observation",
+   "points": [
+    "Wrote Sentinel-2 and Google Earth Engine crop-classification scripts and an initial maize-detection model, which led to a full-time role."
+   ]
+  }
+ ],
+ "publications": [
+  {
+   "title": "Machine Learning and Deep Learning for Snowmelt Prediction: Long-Term Trends and Implications for Water Resource Management",
+   "authors": "<b>Ahmad, D.</b>, & Haseeb, M.",
+   "venue": "Water Resources Management, 40(9), 407",
+   "year": "2026",
+   "status": "Published",
+   "link": "https://doi.org/10.1007/s11269-026-04775-0"
+  },
+  {
+   "title": "Multi-Sensor Fusion and Deep Learning Approaches for Semantic Segmentation of Glacial Lakes",
+   "authors": "Xue, L., Khan, A., Haseeb, M., Aqnouy, M., <b>Ahmad, D.</b>, et al.",
+   "venue": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+   "year": "2025",
+   "status": "Published",
+   "link": "https://doi.org/10.1109/JSTARS.2025.3576187"
+  },
+  {
+   "title": "GeoAI-based Spatio-Temporal Dynamics and Explainable AI Modelling of Carbon Monoxide over Pakistan using Sentinel-5P TROPOMI (2018 to 2026)",
+   "authors": "Bano, S., Javed, A. M., Mahmood, K., <b>Ahmad, D.</b>, Tariq, S., & Parvez, S.",
+   "venue": "Under review",
+   "year": "",
+   "status": "Under review",
+   "link": ""
+  },
+  {
+   "title": "Rice classification with Sentinel-1 and Sentinel-2",
+   "authors": "",
+   "venue": "Under review",
+   "year": "",
+   "status": "Under review",
+   "link": ""
+  },
+  {
+   "title": "Operational maize mapping in Punjab, Pakistan",
+   "authors": "",
+   "venue": "Under review",
+   "year": "",
+   "status": "Under review",
+   "link": ""
+  }
+ ],
+ "repos": [
+  {
+   "name": "sar-rice-mapper",
+   "group": "Radar and rice",
+   "text": "Sentinel-1 preprocessing, label-free optical + radar rice rule, validation and audits for 132 AOIs."
+  },
+  {
+   "name": "sar-crop-field-mapping",
+   "group": "Radar and rice",
+   "text": "Field-level rice, sugarcane and cassava maps, plus province-scale standing sugarcane."
+  },
+  {
+   "name": "sar-maize-mapper",
+   "group": "Radar and rice",
+   "text": "Sentinel-1 stacks with terrain flattening, track audit and a pixel explorer for maize."
+  },
+  {
+   "name": "cropstack",
+   "group": "Crop mapping",
+   "text": "Multi-crop acreage maps from Sentinel-2 and Landsat, GEE or STAC, RF + XGBoost."
+  },
+  {
+   "name": "cane_scanner",
+   "group": "Crop mapping",
+   "text": "Sugarcane mapping with a date-robust static classifier and honest validation."
+  },
+  {
+   "name": "cotton_scanner",
+   "group": "Crop mapping",
+   "text": "Cotton time-series model with a date guard that stops silent shifts."
+  },
+  {
+   "name": "geospatial-field-delineation",
+   "group": "Fields and geometry",
+   "text": "Field boundaries for any area from open FTW data, cleaned and measured."
+  },
+  {
+   "name": "field-boundary-reconciler",
+   "group": "Fields and geometry",
+   "text": "Reconciles model crop polygons with surveyed field boundaries."
+  },
+  {
+   "name": "geo-dissolve-pipeline",
+   "group": "Fields and geometry",
+   "text": "Memory-bounded, resumable dissolve for 1.5M+ features."
+  },
+  {
+   "name": "crop-mask-processor",
+   "group": "Fields and geometry",
+   "text": "Removes overlaps between crop layers, clips to districts, writes acreage workbooks."
+  },
+  {
+   "name": "field-statistics-calculator",
+   "group": "Fields and geometry",
+   "text": "Area, perimeter and compactness distributions from GeoParquet."
+  }
+ ],
+ "skills": {
+  "Programming and data": [
+   "Python",
+   "NumPy",
+   "Pandas",
+   "GDAL",
+   "Rasterio",
+   "GeoPandas",
+   "Shapely",
+   "SQL",
+   "PostgreSQL/PostGIS",
+   "R",
+   "Git",
+   "Linux",
+   "Docker"
+  ],
+  "Machine learning": [
+   "PyTorch",
+   "TensorFlow/Keras",
+   "scikit-learn",
+   "XGBoost",
+   "LightGBM",
+   "Random Forest",
+   "U-Net",
+   "SAMGeo",
+   "Time-series classification",
+   "Semantic segmentation",
+   "Super-resolution"
+  ],
+  "Remote sensing": [
+   "Sentinel-1 SAR",
+   "Sentinel-2",
+   "Landsat",
+   "Sentinel-5P TROPOMI",
+   "MODIS",
+   "Google Earth Engine",
+   "STAC",
+   "QGIS",
+   "ArcGIS Pro",
+   "ERDAS IMAGINE"
+  ],
+  "Web and services": [
+   "Django",
+   "GeoServer",
+   "Leaflet",
+   "OpenLayers",
+   "ODK Central",
+   "Real-time dashboards"
+  ],
+  "Validation": [
+   "Grouped spatial and temporal validation",
+   "Leakage detection",
+   "Domain-shift checks",
+   "Field-survey accuracy assessment"
+  ]
+ },
+ "education": [
+  {
+   "degree": "M.Phil. Space Science",
+   "when": "2024 – 2026",
+   "place": "Institute of Space Science, University of the Punjab, Lahore",
+   "note": "Gold Medalist · CGPA 3.98 / 4.00 · Thesis: Sentinel-1 SAR vs Sentinel-2 optical data for crop classification"
+  },
+  {
+   "degree": "B.S. Space Science",
+   "when": "2020 – 2024",
+   "place": "Department of Space Science, University of the Punjab, Lahore",
+   "note": "CGPA 3.83 / 4.00 · Final-year project: WebGIS application with Leaflet, GeoServer, PostGIS and Django · B.S. research on snowmelt prediction published in Water Resources Management (2026)"
+  }
+ ],
+ "updates": [
+  {
+   "date": "2026-11",
+   "text": "Launched this portfolio and started offering geospatial services online."
+  },
+  {
+   "date": "2026-10",
+   "text": "Started national-scale sugarcane mapping of Thailand from Sentinel-1 radar."
+  },
+  {
+   "date": "2026-10",
+   "text": "Punjab and Sindh crop maps for 2014 to 2025 accepted by the client."
+  },
+  {
+   "date": "2026-09",
+   "text": "Myanmar rice map validated on 3,533 surveyed plots; radar-only model reaches 97.6% held-out recall."
+  },
+  {
+   "date": "2026",
+   "text": "M.Phil. Space Science completed, Gold Medalist."
+  },
+  {
+   "date": "2026",
+   "text": "First-author paper published in Water Resources Management."
+  },
+  {
+   "date": "2025",
+   "text": "Co-authored paper published in IEEE JSTARS."
+  },
+  {
+   "date": "2025-03",
+   "text": "Promoted to Machine Learning Engineer and Team Lead at Farmdar."
+  }
+ ]
+}
