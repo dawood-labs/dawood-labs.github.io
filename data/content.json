@@ -94,7 +94,7 @@
       "slug": "label-free-rice-mapping",
       "title": "Label-free rice mapping under monsoon cloud",
       "place": "Myanmar · 2025-2026",
-      "summary": "A rice map for 132 areas with no training labels: the optical crop calendar finds rice, the radar flooding signal confirms it.",
+      "summary": "A rice map for 233 areas with no training labels: the optical crop calendar finds rice, the radar flooding signal confirms it.",
       "tags": [
         "Sentinel-1",
         "Sentinel-2",
@@ -104,7 +104,7 @@
       ],
       "metrics": [
         [
-          "132",
+          "233",
           "AOIs mapped"
         ],
         [
@@ -137,6 +137,7 @@
         "For a pilot area, read each field's own curves for crop stage: the radar flood dip dates the planting, a sudden drop in greenness dates the harvest, a slow fade is ripening"
       ],
       "results": [
+        "Delivered for 233 areas after a human review of every area: 199,655 rice fields, 99,347 acres of rice",
         "Plot-interior recall of 99.3%, 99.4% and 98.4% in the main regions",
         "Evergreen false positives cut from 7.1% to 0.0%",
         "Rule on field-mean curves agrees with the pixel vote on 89.5% of field area",
