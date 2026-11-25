@@ -125,20 +125,23 @@
         "Sentinel-2: 93 to 172 dates per AOI, composited into 5-day windows",
         "Sentinel-1: 266 tracks, 12 to 18 passes each, ascending and descending",
         "3,533 surveyed plots reported as standing rice",
-        "422,763 field polygons from a SAMGeo delineation pipeline"
+        "422,763 field polygons from a SAMGeo delineation pipeline",
+        "Pilot area: 202 rice fields followed through the season for crop stage, with a ground check of every field"
       ],
       "method": [
         "Composite cloud-masked Sentinel-2 into 5-day windows and report gaps instead of inventing them",
         "Read each pixel's crop cycle: a long bare trough, a fast climb, a canopy still standing on the map date",
         "Confirm the transplanting flood with a radar drop of at least 3 dB below the field's own dry level",
         "Audit every radar pass: drop artefact passes where evergreen ground jumps 3 dB or more",
-        "Aggregate to field polygons with a second-opinion confidence flag, then review 430 fields by eye and fix 23 kinds of problems, each measured before adoption"
+        "Aggregate to field polygons with a second-opinion confidence flag, then review 430 fields by eye and fix 23 kinds of problems, each measured before adoption",
+        "For a pilot area, read each field's own curves for crop stage: the radar flood dip dates the planting, a sudden drop in greenness dates the harvest, a slow fade is ripening"
       ],
       "results": [
         "Plot-interior recall of 99.3%, 99.4% and 98.4% in the main regions",
         "Evergreen false positives cut from 7.1% to 0.0%",
         "Rule on field-mean curves agrees with the pixel vote on 89.5% of field area",
-        "97% of rice field acres were seen clear within 30 days of the map date: standing rice is observed, not extrapolated"
+        "97% of rice field acres were seen clear within 30 days of the map date: standing rice is observed, not extrapolated",
+        "Crop stage for 202 pilot fields: 154 standing and 48 harvested on the reference day, each with its planting week, crop age and harvest week; the ground check of all 202 fields found 199 right"
       ],
       "lesson": "Hard-coded thresholds do not survive real data. Shape, timing and rate of change of the crop curve matter more than any single value, and every number must say what it is compared against.",
       "repo": "https://github.com/dawood-labs/sar-rice-mapper",
@@ -146,7 +149,9 @@
         "assets/img/label-free-rice-mapping/rice_fields_hero.jpg",
         "assets/img/label-free-rice-mapping/radar_optical_curves.jpg",
         "assets/img/label-free-rice-mapping/qc_agreement.jpg",
-        "assets/img/label-free-rice-mapping/rice_scale_map.jpg"
+        "assets/img/label-free-rice-mapping/rice_scale_map.jpg",
+        "assets/img/label-free-rice-mapping/crop_stage_map.jpg",
+        "assets/img/label-free-rice-mapping/crop_stage_calendar.jpg"
       ]
     },
     {
@@ -903,6 +908,10 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-11",
+      "text": "Crop stage from space for a rice pilot area: planting week, crop age and harvest week for 202 fields, 199 right in a ground check of every field."
+    },
     {
       "date": "2026-11",
       "text": "Field-level rice, sugarcane and cassava map of Phanom Dong Rak district (Thailand): 59,519 fields, 93% rice agreement with blind review."
