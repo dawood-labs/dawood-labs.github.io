@@ -308,6 +308,66 @@
       ]
     },
     {
+      "slug": "harvest-monitoring-from-radar",
+      "title": "Harvest monitoring from radar",
+      "place": "Sakhon Nakhon and Phetchabun, Thailand · 2025-2026",
+      "summary": "Which sugarcane fields are already cut, mapped from Sentinel-1 radar that sees through cloud, with an optical backup only where radar is unsure.",
+      "tags": [
+        "Sentinel-1",
+        "LightGBM",
+        "Sentinel-2",
+        "Harvest monitoring",
+        "Sugarcane"
+      ],
+      "metrics": [
+        [
+          "96.2%",
+          "agreement with the delivered optical reports, radar alone"
+        ],
+        [
+          "99.0%",
+          "agreement with the optical backup added"
+        ],
+        [
+          "8,869 to 2,387 acres",
+          "difference area, radar alone to radar + optical backup"
+        ],
+        [
+          "100,792 acres",
+          "of cane scored in Sakhon Nakhon province"
+        ]
+      ],
+      "problem": "Harvest reports for sugarcane are made from one cloud-free Sentinel-2 image per report date, hand-drawn samples and a Random Forest. Clouds block this method: one report had 8,325 acres hidden by cloud, and another had 65,172 acres unusable because of an image problem.",
+      "data": [
+        "Sentinel-1 GRD VV and VH radar, with each orbit track kept separate because tracks have different viewing angles",
+        "Sakhon Nakhon province: main tracks revisit every 6 and 12 days, and 81% of the cane is seen by 2 tracks, 19% by 3",
+        "Delivered optical harvest reports of the 2025-26 season as the reference, and a cane mask so that only cane pixels are processed"
+      ],
+      "method": [
+        "When cane is cut the tall canopy disappears and the radar VH signal falls by about 4 dB, so the idea is to detect that drop",
+        "5 x 5 smoothing inside the mask, then 64 date-free features per pixel (28 level and 36 rate or texture features)",
+        "LightGBM classifier with the rule that once harvested stays harvested across report dates",
+        "Optical backup: a small optical model taught by the radar-sure pixels, used only where radar is unsure and a clear image exists",
+        "Scored on blocks of at least 0.5 acre that are one class in the reference, with one report date held out at a time and 3 km checkerboard test blocks"
+      ],
+      "results": [
+        "Sakhon Nakhon, 100,792 acres of cane, model trained on 7 report dates",
+        "Radar alone: agreement with the delivered optical reports of 96.7%, 95.5% and 95.8% on 3 scored dates (96.2% overall), with a difference area of 8,869 acres",
+        "Radar + optical backup: about 99.0% agreement and a difference area of 2,387 acres",
+        "One report date in detail (13 Jan): the reference has 31,049 acres harvested and 69,743 standing, radar alone gives 33,139 and 67,654",
+        "Phetchabun province, 261,458 acres of cane, whole-area run: total difference of 11,049 acres with radar alone and 5,550 acres with the optical cross-check",
+        "Limits: about half of the missed harvest is fresh cuts that show one radar pass late, and 6-10% of cut pixels are radar-blind (bare in optical, radar stays at standing level). The reference reports are themselves optical, so agreement is not the same as ground truth"
+      ],
+      "lesson": "Radar can carry the harvest map on its own, but it is one pass late on fresh cuts, so the honest design is radar first and optical only as a backup.",
+      "repo": "https://github.com/dawood-labs/sar-harvest-monitoring",
+      "images": [
+        "assets/img/harvest-monitoring-from-radar/hero_original_vs_radar.jpg",
+        "assets/img/harvest-monitoring-from-radar/example_fields.jpg",
+        "assets/img/harvest-monitoring-from-radar/accuracy.jpg",
+        "assets/img/harvest-monitoring-from-radar/radar_signal.jpg"
+      ]
+    },
+    {
       "slug": "multi-year-crop-maps",
       "title": "Twelve years of crop maps, 2014 to 2025",
       "place": "Punjab and Sindh, Pakistan",
@@ -510,6 +570,65 @@
         "assets/img/field-boundaries-at-scale/reconcile_cut.jpg",
         "assets/img/field-boundaries-at-scale/reconcile_area.jpg",
         "assets/img/field-boundaries-at-scale/reconcile_numbers.jpg"
+      ]
+    },
+    {
+      "slug": "arcmap-model-to-python-tools",
+      "title": "From ArcMap Model Builder to two Python tools",
+      "place": "Kenya · 2026",
+      "summary": "Two Python tools replace the ArcMap Model Builder workflow that analysts ran by hand for every harvest report, with the same output and a much shorter run.",
+      "tags": [
+        "Python",
+        "Raster to polygon",
+        "Resumable",
+        "Testing",
+        "ArcMap"
+      ],
+      "metrics": [
+        [
+          "192.6 s to 6 s",
+          "step-by-step script versus Tool 1 on a 16-core server"
+        ],
+        [
+          "41",
+          "ArcMap Model Builder tool boxes replaced by 2 tools"
+        ],
+        [
+          "1 of 28,246",
+          "polygons differs, by 0.007 acre"
+        ],
+        [
+          "79",
+          "automated tests"
+        ]
+      ],
+      "problem": "Two ArcMap Model Builder models, 41 tool boxes in total, were run by hand for every harvest report. The work was slow, tied to one program and hard to repeat.",
+      "data": [
+        "A classified raster (cane or not cane) and a field layer",
+        "Test area: a sugarcane area in western Kenya, a raster of 6,775 x 6,835 cells at 10 m and a field layer of 44,921 polygons (40,345 acres)",
+        "A real final file of the old workflow, used to check Tool 2"
+      ],
+      "method": [
+        "The first model: majority filter, reclassify, raster to polygon, intersect, dissolve, project, area and sliver removal. The second: clip, erase, select by location, merge and dissolve",
+        "Tool 1 (pre-processing) turns the classified raster and the field layer into remaining-cane polygons with acres",
+        "Tool 2 (post-processing) turns analyst-checked polygons and the field layer into a final layer with Remaining cane and Harvested, and checks that the two classes add up to the field layer area",
+        "The tools read the machine's cores and free memory and plan processes x threads and tile size. Work is done in tiles and each tile is saved, so an interrupted run continues",
+        "Changing only a late setting (sliver size, projection, output name) reruns only the last step, in 1-2 s. A question-and-answer mode is there for analysts on Windows"
+      ],
+      "results": [
+        "Tool 1 gives 28,246 polygons, the same as the existing step-by-step script. Exactly 1 polygon differs, by 0.007 acre, because of a raster-edge rule of the majority filter",
+        "Tool 2 reproduces a real final file of the old workflow: 36,088.453 against 36,088.452 acres, shapes equal to about 0.01 acre. Remaining plus harvested equals the field layer area (40,345.122 acres)",
+        "Speed: the step-by-step script took 192.6 s. Tool 1 takes about 6 s on a 16-core server and 13.8 s on a 12-core laptop with under 3 GB of free memory. Tool 2 takes 31.4 s on that laptop (about 15 s on the server)",
+        "79 automated tests, and a brute-force reference checks that every tile layout gives the same polygons and acres",
+        "Limit: results are checked on one test area, and the one differing polygon comes from an edge rule of the old majority filter that the tools do not copy exactly"
+      ],
+      "lesson": "Tile seams left extra vertices on straight edges, so shapes were equal but the projected area changed by about one part in a million depending on the machine. A single odd run showed it, and it is now fixed and tested.",
+      "repo": "https://github.com/dawood-labs/harvest-polygon-tools",
+      "images": [
+        "assets/img/arcmap-model-to-python-tools/workflow_before_after.jpg",
+        "assets/img/arcmap-model-to-python-tools/speed.jpg",
+        "assets/img/arcmap-model-to-python-tools/raster_to_polygons.jpg",
+        "assets/img/arcmap-model-to-python-tools/same_result.jpg"
       ]
     },
     {
@@ -836,6 +955,16 @@
       "name": "field-statistics-calculator",
       "group": "Fields and geometry",
       "text": "Area, perimeter and compactness distributions from GeoParquet."
+    },
+    {
+      "name": "sar-harvest-monitoring",
+      "group": "Radar and rice",
+      "text": "Sugarcane harvest status from Sentinel-1 radar, with an optical backup where radar is unsure."
+    },
+    {
+      "name": "harvest-polygon-tools",
+      "group": "Fields and geometry",
+      "text": "Two resumable Python tools that replace an ArcMap Model Builder workflow for harvest reports."
     }
   ],
   "skills": {
@@ -909,6 +1038,14 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-11",
+      "text": "Sugarcane harvest monitoring from radar alone: 96.2% agreement with the delivered optical reports on 100,792 acres of cane, 99.0% with an optical backup."
+    },
+    {
+      "date": "2026-11",
+      "text": "Two Python tools replace an ArcMap Model Builder workflow: same output, 192.6 s down to about 6 s on a 16-core server."
+    },
     {
       "date": "2026-11",
       "text": "Crop stage from space for a rice pilot area: planting week, crop age and harvest week for 202 fields, 199 right in a ground check of every field."
